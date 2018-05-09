@@ -1,0 +1,608 @@
+
+/*========================== БАЗОВЫИ НАСТРОЙКИ =====================*/
+// hover hover visited и active - псевдо классы 
+a:hover,
+a:focus,
+a:visited,
+a:active{
+	text-decoration: none;
+}
+.section_header h2{
+	text-transform: uppercase;
+	color: #666666;
+}
+// что бы не было тупой сине обводочки 
+button:focus{
+outline: none;
+}
+/*========================== ШАПКА =====================*/
+header{
+	color: #666666;
+	padding-top: 25px;
+	padding-bottom: 20px;
+	height: 110px;
+
+	.logotype{
+        img{
+        	text-align: left;
+            //display: inline-block; //не знаю зачем 
+            width: 150px;
+        	height: 40px;         	
+        	margin-top: 15px;
+        }
+	}
+
+	.descripy{
+		h4{
+			text-transform: uppercase;
+			h5{
+				font-size: 15px;
+			}
+		}
+	}
+
+	.phone_number{
+		text-align: right;
+		h3{
+			margin-top: 7px;
+		} 
+        a{
+        color: #666666;
+		   
+        &:hover{
+        	text-decoration: none; 
+        }
+        display: inline-block;
+        &:before{
+        	content: '';
+        	width: 30px;
+        	height: 30px;
+        	background: url(../img/phone_icon.png) no-repeat center center;
+        	display: inline-block;
+        	vertical-align: top;
+        	margin-right: 0px; //отступ
+        }
+       }
+	}	
+}
+
+
+
+/*====================    НАВИГАЦИЯ    =====================*/
+
+nav{
+background-color: #FAFDFA; // фон в цвет
+ul.list-inline a{
+	display: inline-block; // все в линию
+	text-transform: uppercase; // с большой буквы все 
+	padding: 20px 10px; // отступы с верху , по бока
+	color: #666666;
+				        -moz-transition: all 0.1s 0.02s ease;
+					      -o-transition: all 0.1s 0.02s ease;
+					      -webkit-transition: all 0.1s 0.02s ease;
+	&:hover{
+		text-decoration: none;
+		background-color: #67cc67;
+		color: #fff;
+	}
+}
+ul.list-inline{
+	margin-bottom: 0;
+}
+/*фиксированное плавающее меню*/
+   top: 110px; /*высота шапки в пикселях*/
+   position: fixed;
+   z-index: 100;
+   width: 100%;
+   height: 60px;
+}
+
+/*==========================    ГЛАВНЫЙ ЭКРАН    ==============================*/
+section#main{
+	background: url(../img/main_bg_1920.jpg) no-repeat center center;
+    background-size: cover; // что бы покрывал всю область 
+    opacity: 0.9;
+    // что бы было меньше задержек при перелистывании 
+    margin-top: 60px;
+    .main_header{
+    	h1{
+    		margin-top: 100px;
+    		margin-bottom: 90px;
+    		color: #fff;
+    		text-transform: uppercase;
+    	span{
+    			background-color:  #67cc67;
+    			padding: 5px;
+    		}
+    	}
+    }
+    h3{
+    		text-transform: uppercase;
+    		color: #666666;
+    		color: rgb(0, 0, 0);
+    		span{
+    			color: #ff9933;
+    		}
+    	}
+    	.main_buttons{
+    		margin-top: 7px;
+    		margin-bottom: 100px;
+    		button#get_measurer{
+    			border: none; // чистим изначальное её оформление 
+    			background-color: #ff9933;
+    			padding: 20px 35px; // сверху 20 по бокам 35
+                color: #fff; // цвет текста белый 
+                text-transform: uppercase;
+                font-size: 20px;
+               &:hover{
+               	background-color: #d67513;
+               }
+    		}
+    		button#get_types{
+    			border: none; // чистим изначальное её оформление 
+    			background-color: transparent; // что бы фон просвечивался 
+    			padding: 18px 33px; // сверху 20 по бокам 35
+                color: #ff9933	; // цвет текста
+                text-transform: uppercase;
+                font-size: 20px;
+                border: 2px solid #ff9933;
+                margin-left: 20px; // отступ слева на 20 
+                &:hover{
+                	background-color: rgba(255, 255, 255, 0.8);  // при наведении цает становится прозрачным на 0.5 
+                }
+    		}
+    	}
+}
+
+
+/*=========================    ВИДЫ ЖАЛЮЗИ    ==========================*/
+
+section#types{
+	color: #666666;
+	padding-top: 50px;
+	.section_header{
+		margin-bottom: 50px; // 280/254
+		}
+	h4{
+		margin-top: 25px;
+		text-transform: uppercase;
+	  }
+	  button.more_btn{
+	  	border:none;
+	  	color: #66cc66;
+	  	border: 2px solid #66cc66;
+	  	padding: 10px 14px;
+	  	background: transparent; // фон прозрачный 
+	  	text-transform: uppercase;
+			  	 	-moz-transition: all 0.1s 0.02s ease;
+							      -o-transition: all 0.1s 0.02s ease;
+							      -webkit-transition: all 0.1s 0.02s ease;
+	  	&:hover{
+	  		background-color: #A3FA92;
+	  		color: #66cc66;
+	  	}
+	  }
+	  	  button.order_btn{
+	  	border:none;
+	  	color: #fff;
+	  	border: 2px solid #66cc66;
+	  	padding: 10px 23px;
+	  	background: #66cc66;
+	  	text-transform: uppercase;
+			  	 	-moz-transition: all 0.1s 0.02s ease;
+							      -o-transition: all 0.1s 0.02s ease;
+							      -webkit-transition: all 0.1s 0.02s ease;
+	  	&:hover{
+	  		background-color: #34C925;
+	  		color: #fff;
+	  	}
+	  }
+	  .card{
+			  							-moz-transition: all 0.1s 0.02s ease;
+									      -o-transition: all 0.1s 0.02s ease;
+									      -webkit-transition: all 0.1s 0.02s ease;
+	  	padding: 5px; // внутренний отступ 
+	  	border: 2px solid transparent; // что бы не скакала рамка  
+	  	&:hover{
+	  		background-color: #fafdfa;
+	  		border: 2px solid #b2e5b2; // ширина рамки , сплошная , цвет 
+	  	}
+	  }
+}
+
+
+/*=======================    БЕСПЛАТНАЯ КОНСУЛЬТАЦИЯ     ==========================*/
+
+section#help{
+	padding-top: 65px;
+	padding-bottom: 50px;
+	h3{
+		color: #ff9933;
+		text-transform: uppercase;
+	}
+	p{
+		color: #666666;
+		font-size: 14px;
+	}
+	img{
+		margin-top: 25px;	
+	}
+	button#free_consult{
+		border:none;
+		text-transform: uppercase;
+		background-color: transparent;
+		color: #ff9933;
+		border: 2px solid #ff9933;
+		padding: 15px 35px;
+		&:hover{
+			background-color: #ff9933;
+			color: #fff;
+		}
+
+	}
+}
+
+/*=========================    СЛАЙДЕР РАБОТ   =======================*/
+section#portfolio{
+	padding-bottom: 70px;
+	.slider{
+		padding-left: 575px;
+	}
+	h2{
+		padding-bottom: 15px;	
+	}
+
+}
+
+
+/*===============================    АКЦИЯ    =========================*/
+
+section#offer{
+h4{
+		text-transform: uppercase;
+		color: #ff9933;
+}
+h3{
+	text-transform: uppercase;
+	color: #ff9933;
+}
+p{
+	color: #666666;
+	font-size: 17px;
+}
+input[name = "name"]{
+background: url(../img/name_input.png) no-repeat center left 5px; // она не должна повотртся, выравниваем по центру , и с лева , от карая на 5 
+padding: 25px;
+padding-left: 30px;
+border-radius: 0;
+border:solid 1px #cccccc;
+opacity: 0.5;
+&:hover,
+&:focus{ 
+	opacity: 1;
+	//cursor: pointer; // меняем курсор 
+}
+
+}
+input[name = "phone"]{
+background: url(../img/phone_input.png) no-repeat center left 5px; // она не должна повотртся, выравниваем по центру , и с лева , от карая на 5 
+padding: 25px;
+padding-left: 30px;
+border-radius: 0;
+border:solid 1px #cccccc;
+opacity: 0.5;
+&:hover,
+&:focus{ 
+	opacity: 1;
+	//cursor: pointer; // меняем курсор 
+}
+}
+ button[type="submit"]{
+ 	background-color: #ff9933;
+ 	color: #fff;
+ 	border: 1px, solid #ff9933;
+ 	padding: 14px 35px;
+ 	text-transform: uppercase;
+ 	//width: 100%;
+ 	&:hover{
+ 		background-color: #E77D18;
+ 		color: #fff;
+ 	 	}
+ }
+}
+
+
+/*==========================    ОТЗЫВЫ    ============================*/
+
+section#feedback{
+	padding-bottom: 50px;
+	.section_header{
+		margin-bottom: 50px;
+		margin-top: 75px;
+	}
+	.item{
+		background-color: #f8f8f8;
+		padding: 20px;
+	}
+	h5{
+		margin-top: 25px;
+		color: #666666;
+		font-size: 15px;
+		font-weight:700;
+	}
+	p{
+       margin-top: 15px;
+       margin-left: 20px;
+	}
+	.carousel-indicators{ // что кнопки переключатели слайдов были видны 
+		bottom: -50px;
+	}
+	.carousel-indicators li{ // не активный слайд
+		background-color: #ff9933;
+		border: solid 1px   #ff9933;
+
+	}
+	 .carousel-indicators .active { // активный слайд 
+		background-color:  #fff; 
+		border: solid 1px    #ff9933;
+	}
+	.audio{
+		margin-top: 10px;
+		margin-left: 10px;
+	}
+
+}
+
+
+/*=======================    ФУТЕР(ПОДВАЛ)    =======================*/
+
+footer{
+	padding-top: 50px;
+	padding-bottom: 10px;
+	background-color: #666666;
+	color: #fff;
+	h2{
+		text-transform: uppercase;
+		color: #fff;
+		margin-left: -15px;
+	}
+	address{
+		margin-top: 10px;
+    p#address{
+    text-transform: uppercase;
+    margin-bottom: 0;
+    &:before{
+    	content: '';
+    	 width: 12px;
+    	 height: 12px;
+    	 background: url(../img/map_marker.png) no-repeat center center;
+    	 display: inline-block;
+    	 vertical-align: middle;
+    } 
+    }
+	}
+	p#kazan{
+		font-size: 15px;
+		font-weight: 15px;
+		margin-top: 0px; // убераем отступ 
+	}
+	p#phone_footer{
+	text-transform: uppercase;
+    margin-bottom: 0;
+    &:before{
+    	content: '';
+    	 width: 12px;
+    	 height: 12px;
+    	 background: url(../img/phone_input.png) no-repeat center center;
+    	 display: inline-block;
+    	 vertical-align: middle;
+    
+    }
+	}
+	p#namber{
+		font-size: 15px;
+		font-weight: 15px;
+		margin-top: 0px; // убераем отступ 
+	}
+	// долго мучились с стилизацией(что-бы иконка была по центру)
+	.social_icon{
+		margin-right: 5px;
+		display: inline-block;
+		background-color: #cccccc;
+		text-align: center;	
+		padding: 8px;
+		padding-left: 9px;
+		border-radius: 50%;
+		width: 37px;
+		height: 37px;	
+		&:hover{
+			background-color: #fff;
+		}
+		.social{
+           margin-top: 20px;
+		}
+	}
+	button#get_answer{
+		text-transform: uppercase;
+		 margin-left: 10px;
+		 background-color: transparent;
+		 padding: 7px 35px;
+		 color: #fff;
+		 border: 2px solid #fff;
+		 &:hover{
+		 	background-color: #fff;
+		 	color: #666666;
+		 }
+	}
+	.details_row{
+		margin-top: 30px;
+	}
+	.details{
+		img{
+        	text-align: left;
+            //display: inline-block; //не знаю зачем 
+            width: 130px;
+        	height: 30px;     
+        	margin-bottom: 7px;    	
+        	margin-top: 7px;
+
+        }
+	
+		p{
+			text-transform: uppercase;
+			margin-left: 10px;
+		}
+	}
+	.policy{
+		text-align: center;
+		a{
+			color: #fff;
+			border-bottom: 1px solid dashed #fff; 
+		}
+	}
+	.Bondar{
+		text-align: right;
+		text-transform: uppercase;
+		h4{
+				color: #fff;
+				font-size: 18px;
+		   }
+		}
+		a#creator{
+			color: #fff;
+			font-size: 15px;
+
+		}
+}
+
+
+/*=======================   ВСПЛЫВАЮШИЕ ОКНА    =======================*/
+
+.modal-dialog{
+	margin-top: 10%;
+}
+.big_modal{
+	margin-top: 10%;
+	width: 60%;
+}
+.header_modal{
+	h4{
+		text-transform: uppercase;
+		color: #666666;
+		//font-size: 20px;
+	}	
+}
+.modal-header{
+	margin-top: -50px;
+    border-bottom:none; // убираем полоску 
+    .close{
+    	text-shadow: none;	
+    	color: #fff;
+    	opacity: 0.9;
+    	margin-right: -30px;
+    }
+}
+.modal-content{
+	border-radius: 0; 
+	input[name = "name"]{
+margin-top: 15px; 
+background: url(../img/name_input.png) no-repeat center left 5px; // она не должна повотртся, выравниваем по центру , и с лева , от карая на 5 
+padding: 25px;
+padding-left: 30px;
+border-radius: 0;
+border:solid 1px #cccccc;
+opacity: 0.5;
+&:hover,
+&:focus{ 
+	opacity: 1;
+	//cursor: pointer; // меняем курсор 
+}
+
+}
+input[name = "phone"]{
+margin-top: 15px; 
+background: url(../img/phone_input.png) no-repeat center left 5px; // она не должна повотртся, выравниваем по центру , и с лева , от карая на 5 
+padding: 25px;
+padding-left: 30px;
+border-radius: 0;
+border:solid 1px #cccccc;
+opacity: 0.5;
+&:hover,
+&:focus{ 
+	opacity: 1;
+	//cursor: pointer; // меняем курсор 
+}
+}
+
+textarea{
+	width: 100%;
+	margin-top: 15px; 
+padding: 25px;
+padding-left: 30px;
+border-radius: 0;
+border:solid 1px #cccccc;
+opacity: 0.5;
+&:hover,
+&:focus{ 
+	opacity: 1;
+	//cursor: pointer; // меняем курсор 
+}
+}
+
+ button[type="submit"]{
+ 	margin-top: 15px;
+ 	background-color: #ff9933;
+ 	color: #fff;
+ 	border: 1px, solid #ff9933;
+ 	padding: 14px 35px;
+ 	text-transform: uppercase;
+ 	//width: 100%;
+ 	&:hover{
+ 		background-color: #E77D18;
+ 		color: #fff;
+ 	 	}
+ }
+ p{
+ 			font-size: 18px;
+ 			span{
+ 				color: #ff9933;
+ 			}
+ 		}
+}
+
+ .header_modal_info{
+ 	h4{
+ 		margin-left: 20px; 
+ 		text-transform: uppercase;
+ 		color: #666666;
+
+ 	}
+ 	
+}
+h4.modal-title{
+	color: #fff;
+	text-transform: uppercase;
+}
+button[type="close"]{
+ 	margin-top: 0px;
+ 	background-color: #fff;
+ 	color: #666666;
+
+ 	padding: 8px 16px;
+ 	border-radius: 5px;
+ 	 
+    border-color: #CCCCCC;
+
+ 	//width: 100%;
+ 	&:hover{
+ 		background-color: #F5F5F5;
+ 		color: #666666;
+ 	 	}
+ }
+
+// подключаем к этому Less файлу другой
+@import "media.less";
+
+
+
+
