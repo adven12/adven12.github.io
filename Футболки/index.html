@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Интернет магазин</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+   <?php
+      if(isset($_POST['clear'])){
+        $login = htmlentities(strip_tags($_POST['login']));
+        $password = htmlentities(strip_tags($_POST['password']));
+
+        $isError = true;
+        if($login == ""){
+          
+          $isError = false;
+        }
+        
+        if($password == ""){
+          
+          $isError = false;
+        }
+
+        if($isError){//если ошибок при регистрации не возникло то сохраняем введенные данные в БД
+          $isSaved = true;//переменная для определения сохранились ли введенные данные в БД
+
+          $link = mysqli_connect('localhost', 'root', 'usbw', 'my_base');//подключаемся к БД
+          if(!$link){
+            printf("Невозможно подключится к БД");
+            $isSaved = false;
+            exit();
+          }
+
+          if(!mysqli_set_charset($link, "utf8")){//устанавливаем кодировку utf8
+            printf("Ошибка при загрузке набора символов");
+            $isSaved = false;
+          }else{
+            //printf("5 минут, полет нормальный\n");
+          }
+
+          //Проверяем есть ли пользователь в БД
+          $_SESSION['id'] = '';
+          //Посылаем запрос серверу
+          $skil = 'users';
+          $skil2 = 'id';
+          if($result = mysqli_query($link, "SELECT $skil2 FROM $skil WHERE login='".mysqli_real_escape_string($link, $_POST['login'])."' 
+            AND password='".mysqli_real_escape_string($link, $_POST['password'])."'")){
+
+            //Выборка результатов запроса
+            while($row = mysqli_fetch_assoc($result)){
+              $_SESSION['id'] = $row['id'];
+            }
+            //header('Location: http://localhost:8080/f/profile.php');
+          }
+
+          //if(isset($_POST['loginb'])){
+            
+
+            //Освобождаем использованую память
+            mysqli_free_result($result);
+          }
+          if($_SESSION['id']!= ''){
+            header('Location: http://localhost:8080/f/profile.php');
+          }
+          else{
+            print("Вы ввели не те данные");
+          }
+
+      }
+    ?>
+
+    <header>
+      <div class="container">
+        <div class="row">
+          <ul id="contacts" class="list-inline">
+            <li>Ваш город - <span>Харьков</span></li>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Магазины</a></li>
+            <li><a href="#">Контакты</a></li>
+             
+            <form class="navbar-right">
+            <button type="button" scr>Вход</button>
+            <a id ="registr" href="registration.php">Регистрация</a>
+            </form> 
+            </ul>
+         </div>
+        </div>
+          <hr>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 text-center logo">
+            <a href="#"> <p><span>O P</span></p></a>
+          </div>
+          <div class="col-md-4 text-left brand">
+            <a href="#"> <p><span>Original</span>
+            <br>
+            <span>prints</span>
+            </p>
+            </a>
+          </div>
+          <div class="col-md-4 text-right grafic">
+            <h3>+380-991-917-099</h3>
+            <p>Режим работы:<br>Будние дни: с 9:00 до 18:00<br>Суббота,Воскресенье - выходные</p>
+          </div>
+        </div>
+           <hr>
+       </div>
+   </main>
+
+    <section id="types">
+       <div class="container">
+        <div class="row cap">
+         <ul class="list-inline">
+           <li><p class="navbar-left">Все товары</p></li>
+           <li class="navbar-right"><a href="#" id="korz">Корзина </a></li>
+           <li class="navbar-right"><p id="out"></p></li>
+         </ul>
+        </div>
+         <hr>
+         <div class="catalog">
+         <div class="row text-left">
+           <div class="col-md-3">
+             <div class="card" onclick="out()">
+               <img src="img/1.jpg" alt="Футболка" class="img-responsive center-block">
+               <p>Мужская футболка хлопок<br><span>Bad Santa</span></p>
+               <h4>450 грн.</h4>
+             </div>
+           </div>
+           <div class="col-md-3">
+             <div class="card" onclick="out()">
+               <img src="img/2.jpg" alt="Футболка" class="img-responsive center-block">
+               <p>Мужская футболка хлопок<br><span>TCP/IP Connecting people</span></p>
+               <h4>450 грн.</h4>
+             </div>
+           </div>
+           <div class="col-md-3">
+             <div class="card" onclick="out()">
+               <img src="img/3.jpg" alt="Футболка" class="img-responsive center-block">
+               <p>Мужская футболка 3D<br><span>Брызги красок</span></p>
+               <h4>500 грн.</h4>
+             </div>
+           </div>
+           <div class="col-md-3">
+             <div class="card" onclick="out()">
+               <img src="img/4.jpg" alt="Футболка" class="img-responsive center-block">
+               <p>Мужская футболка хлопок<br><span>Панда Санта-Клаус</span></p>
+               <h4>350 грн.</h4>
+             </div>
+           </div>
+         </div>
+        
+         <div class="row text-left">
+           <div class="col-md-3">
+             <div class="card" onclick="out()">
+               <img src="img/5.jpg" alt="Футболка" class="img-responsive center-block">
+               <p>Мужская футболка хлопок<br><span>Класcический смокинг</span></p>
+               <h4>500 грн.</h4>
+             </div>
+           </div>
+           <div class="col-md-3">
+             <div class="card" onclick="out()">
+               <img src="img/6.jpg" alt="Футболка" class="img-responsive center-block">
+               <p>Мужская футболка хлопок<br><span>Doge</span></p>
+               <h4>500 грн.</h4>
+             </div>
+           </div>
+           <div class="col-md-3">
+             <div class="card" onclick="out()">
+               <img src="img/7.jpg" alt="Футболка" class="img-responsive center-block">
+               <p>Мужская футболка 3D<br><span>Краска и ничего лишнего!</span></p>
+               <h4>600 грн.</h4>
+             </div>
+           </div>
+           <div class="col-md-3">
+             <div class="card" onclick="out()">
+               <img src="img/8.jpg" alt="Футболка" class="img-responsive center-block">
+               <p>Мужская футболка 3D<br><span>White walker</span></p>            
+               <h4>450 грн.</h4>
+             </div>
+           </div>
+         </div>
+       </div>
+      </div>
+    </section>
+
+
+   
+
+  <!-- Modal -->
+        <div class="modal fade" id="exit_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4>Вход</h4>
+              </div>
+              <div class="modal-body">
+               
+                 <div class="header_modal">
+                  <div class="row">
+                <form action="index.php" method="post">
+                 
+                    <input type="text" name="login" required placeholder="Логин..." class="form-control form_input"> 
+                    <input type="text" name="password"  required placeholder="Пароль..." class="form-control form_input">
+                    <input name="clear" type="submit" id="vhod" value="Войти"></br><br>
+
+                          
+                    <!--<button name="clear" type="submit" class="text-right">Вход</button>-->
+                 
+                </form>
+               </div>
+
+               </div> 
+              </div>
+            </div>
+          </div>
+        </div>
+
+    
+
+    <!-- Modal -->
+        <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                
+              </div>
+              <div class="modal-body">
+               <div class="row">
+                 
+               </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+    <script>
+      $(document).ready(
+          function() {
+              $("html").niceScroll({cursorcolor:"#000"});
+          }
+      );
+      var count = 0;
+     function out(){
+      var p;
+      //var k;
+      //var count = 0;
+      count++;
+      p = document.getElementById('out');
+      p.innerHTML = count;
+     }
+    </script>
+  </body>
+</html>

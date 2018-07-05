@@ -1,0 +1,1046 @@
+/*============   Базовые настройки    ===========*/
+	body{
+		//height: 1997px;
+		//background: linear-gradient(to top, #143A1A, #103E14);
+		//background: url(../img/333.png);
+		a:hover,
+		a:focus,
+		a:visited,
+		a:active{
+			text-decoration: none;
+			outline: none;
+		}
+		button:focus{
+			outline: none;
+		}
+		div#section_first{
+			background: url(../img/333.png);
+		}
+    }
+
+
+/*============    ШАПКА    ===========*/
+	header{
+            margin-top: -5px;
+		    height: 80px;
+		   //background: linear-gradient(to top, #3F4043, #444548);
+		    background-color: rgba(68,69,72,0.9); 
+    	    padding-top: 15px;
+		    padding-bottom: 10px;
+
+		 .dumbbell{
+		    img{
+		    	margin-top: 10px;
+		        margin-left: -30px;
+		    }
+
+		 }
+		 .star-rating{
+			  margin-top: 7px;
+			  margin-left: -30px;
+			  padding: 0;
+			  list-style: none;
+			  width: 195px;
+			  height: 32px;
+			  position: relative;
+			  background: url(../img/reting-star.png);
+
+			   li{
+				  float: left;
+				  margin: 0;
+				  padding: 0;
+			   a{
+				  display: block;
+				  width: 39px;
+				  height: 33px;
+				  text-indent: -9999px;
+				  position: absolute;
+				  text-decoration: none;
+				  z-index: 10;
+					  &:hover{
+					  background: url(../img/reting-star-2.png) left;
+					  left: 0;
+					  z-index: 2;
+					}
+			    }
+				 .star1 {
+					  left: 0;
+						&:hover {
+						  width: 39px;
+						}
+				 }
+				 .star2{
+					  left: 39px;
+						&:hover{
+						  width: 78px;
+						}
+				 }
+				 .star3{
+					  left: 78px;
+						&:hover{
+						  width: 117px;
+						}
+				 }
+				 .star4{
+					  left: 117px;
+						&:hover {
+						  width: 156px;
+						}
+					}
+				 .star5{
+					  left: 156px;
+						&:hover {
+						  width: 195px;
+						}
+					}
+					        
+			   }
+	     }
+		.namesite{
+			h3{
+		    	margin-top: 15px;
+				color: #FDFDFD;
+				font-size: 24px;
+				font-weight:500;
+			}
+		}
+		.calendar{
+		 	a{
+		 		color: #99999A;
+		 	}
+		 	h3{
+		 		margin-top: 14px;
+		 		color: #99999A;
+		 	}
+
+		}
+		.w-of-f{
+		 	img{
+		 	 	height: 45px;
+		 	 	width: 45px;
+		 	 	}
+		}
+	}
+
+
+/*============    ГЛАВНЫЙ ЭКРАН    ===========*/
+
+section#main{
+    height: 580px;
+    .back{
+		width: 90px;
+		height: 70px;
+		opacity: 0.7;
+		margin-left: 20px;
+	    margin-right: 50px;	
+	    margin-top: 20px;
+			&:hover{
+		      opacity: 1;
+			}		
+    }
+	.bl{
+		   top: 120px; //высота шапки в пикселях
+		   right: -20px;
+		   position: fixed;
+		   z-index: 100;
+		img#first{
+			height: 60px;
+		    width: 60px;
+			margin-top: 40px;
+			transition: all 0.1s ease;
+			position: absolute;
+			&:hover{
+			height: 70px;
+			width: 70px;
+		}
+		}
+		img#secound{
+			height: 65px;
+		    width: 65px;
+			margin-top: 115px;
+			transition: all 0.1s ease;
+			position: absolute;
+			&:hover{
+			height: 75px;
+			width: 75px;
+		}
+		}
+		img#third{
+			height: 65px;
+		    width: 65px;
+			margin-top: 185px;
+			transition: all 0.1s ease;
+			position: absolute;
+			&:hover{
+			height: 75px;
+			width: 75px;
+		}
+		}
+		img#fourth{
+			height: 55px;
+		    width: 55px;
+			margin-top: 255px;
+			transition: all 0.1s ease;
+			position: absolute;
+			&:hover{
+			height: 60px;
+			width: 60px;
+		}
+		}
+		img#tenth{
+			height: 55px;
+		    width: 55px;
+			margin-top: 325px;
+			transition: all 0.1s ease;
+			position: absolute;
+			margin-right: 5px;
+			&:hover{
+			height: 60px;
+			width: 60px;
+		}
+		}
+		img#twelve{
+			height: 55px;
+		    width: 55px;
+			margin-top: 395px;
+			transition: all 0.1s ease;
+			position: absolute;
+			margin-right: 5px;
+			&:hover{
+			height: 60px;
+			width: 60px;
+		}
+		}
+	}
+	.lb{
+		   top: 120px; //высота шапки в пикселях
+		   left: 0px;
+		   position: fixed;
+		   z-index: 100;
+		img#fifth{
+			height: 60px;
+		    width: 60px;
+			margin-top: 40px;
+			transition: all 0.1s ease;
+			position: absolute;
+			&:hover{
+			height: 65px;
+			width: 65px;
+		}
+		}
+		img#sixth{
+			height: 60px;
+		    width: 60px;
+			margin-top: 115px;
+			transition: all 0.1s ease;
+			position: absolute;
+			&:hover{
+			height: 65px;
+			width: 65px;
+		}
+		}
+		img#seventh{
+			height: 60px;
+		    width: 60px;
+			margin-top: 185px;
+			transition: all 0.1s ease;
+			position: absolute;
+			&:hover{
+			height: 65px;
+			width: 65px;
+		}
+		}
+		img#eighth{
+			height: 60px;
+		    width: 60px;
+			margin-top: 255px;
+			transition: all 0.1s ease;
+			position: absolute;
+			&:hover{
+			height: 65px;
+			width: 65px;
+		}
+		}
+	    img#ninth{
+			height: 50px;
+		    width: 55px;
+			margin-top: 325px;
+			transition: all 0.1s ease;
+			position: absolute;
+			margin-left: 5px;
+			&:hover{
+			height: 55px;
+			width: 60px;
+		}
+		}
+		img#eleventh{
+			height: 55px;
+		    width: 55px;
+			margin-top: 395px;
+			transition: all 0.1s ease;
+			position: absolute;
+			margin-left: 5px;
+			&:hover{
+			height: 60px;
+			width: 60px;
+		}
+		}
+
+		
+	}
+	.main-photo-g{
+		    margin-top: 50px;
+			margin-left: 310px;
+			height: 450px;
+			width: 700px;
+    }
+	.main-photo-w{
+		    margin-top: 25px;
+			margin-left: 480px;
+	}
+
+	h4{
+		margin-left: -5px;
+		margin-top: 15px;
+		color: #FDFDFD;
+		font-weight:300;
+		font-size: 22px;
+		background-color: rgba(68,69,72,0.9); 
+		padding: 5px; 
+		text-align: center;
+		
+	}
+	span{
+	    //margin-left: -5px;
+		//margin-top: 15px;
+		//margin-bottom: 15px;
+		//color: #FDFDFD;
+		//font-weight:300;
+		font-size: 17px;
+		//background-color: rgba(68,69,72,0.9); 
+		//padding: 5px; 
+		//text-align: none;
+		//padding-right: 650px;
+	}
+	.center-calendar{
+        width: 700px;
+    	margin-top: 30px;
+    	margin-left: 200px;
+    }
+}
+    
+/*============    Комната    ===========*/
+section#room{
+	background: url(../img/room.jpg);
+	background-position: center;
+	padding-bottom: 17px;
+	height: 660px;
+	width: 1367px;
+	//background-size: 1367px 660px;
+	background-size: 100% 100%;
+	-webkit-transition: all 1s;
+    -moz-transition: all 1s;
+	-o-transition: all 1s;
+    transition: all 1s;
+    .room_things{
+    	display: inline;
+        position: absolute;
+        -webkit-transition: all 1s;
+		-moz-transition: all 1s;
+		-o-transition: all 1s;
+		transition: all 1s;
+		z-index: 1;
+    }
+	.window{
+		margin-top:-300px;
+		width: 130px;
+		height: 290px;
+   		&:hover{
+			width: 140px;
+			height: 305px;
+			margin-top:-310px;
+    	}
+		 
+	}
+	.ideas{
+		width: 70px;
+		height: 85px;
+        margin-top: -250px;
+        margin-left: 320px;
+        &:hover{
+            width: 80px;
+            height: 97px;
+            margin-top: -260px;
+            margin-left: 315px;
+        }
+	}
+	.english{
+		width: 130px;
+		height: 90px;
+        margin-top: -100px;
+        margin-left: 245px;        
+        &:hover{
+			width: 145px;
+			height: 100px;
+			margin-top: -105px;
+            margin-left: 235px;
+		}
+	}
+	.cat{
+		width: 55px;
+		height: 82px;
+        margin-top: 40px;
+        margin-left: 235px;
+        &:hover{
+        	width: 65px;
+        	height: 95px;
+        	margin-top: 32px;
+            margin-left: 230px;
+        }
+	}
+	.tv{
+        width: 330px;
+        height: 190px;
+        margin-top: -200px;
+        margin-left: 530px;
+         &:hover{
+        	width: 420px;
+        	height: 240px;
+        	margin-left: 484px;
+        	margin-top: -240px;
+        }
+	}
+	.run-up{
+		width: 210px;
+        height: 10px;
+        margin-top: 15px;
+        margin-left: 590px;
+        box-shadow: 0 0 5px 1px;
+	}
+	.music{
+		width: 45px;
+        height: 210px;
+        margin-top: -90px;
+        margin-left: 475px;
+        &:hover{
+        	width: 60px;
+        	height: 270px;
+        	margin-top: -150px;
+        	margin-left: 470px;
+        }
+	}.music-2{
+		width: 45px;
+        height: 210px;
+        margin-top: -90px;
+        margin-left: 870px;
+         &:hover{
+        	width: 60px;
+        	height: 270px;
+        	margin-top: -150px;
+        	margin-left: 865px;
+        }
+	}
+	.compass{
+		width: 70px;
+        height: 70px;
+        margin-top: -250px;
+        margin-left: 950px;
+        &:hover{
+        	width: 90px;
+        	height: 90px;
+        	margin-top: -257px;
+        	margin-left: 943px;
+        }
+	}
+	.leaf{
+		width: 50px;
+        height: 70px;
+        margin-top: -130px;
+        margin-left: 955px;
+        &:hover{
+        	width: 60px;
+        	height: 85px;
+        	margin-top: -145;
+        	margin-left: 950px;
+        }
+	}
+	.road{
+		width: 175px;
+        height: 115px;
+        margin-top: -280px;
+        margin-left: 1190px;
+        box-shadow: 0 0 5px 2px #2B221D;
+
+        &:hover{
+        	width: 185px;
+        	height: 125px;
+        	margin-top: -287px;
+        	margin-left: 1185px;
+        }  
+	}
+	.naturo{
+		width: 130px;
+        height: 43px;
+        margin-top: 0px;
+        margin-left: 1250px;
+        &:hover{
+        	width: 150px;
+        	height: 50px;
+        	margin-top: 0px;
+        	margin-left: 1230px;
+        }
+	}
+	.crf{
+		width: 120px;
+        height: 38px;
+        margin-top: 50px;
+        margin-left: 1255px;
+        &:hover{
+        	width: 140px;
+        	height: 45px;
+        	margin-top: 40px;
+        	margin-left: 1240px;
+        }
+	}
+	.guitar{
+		width: 50px;
+        height: 150px;
+        margin-top: -20px;
+        margin-left: 1050px;
+        z-index: 1;
+        &:hover{
+        	width: 70px;
+        	height: 210px;
+        	margin-top: -50px;
+        	margin-left: 1040px;
+        }
+	}
+	.bag{
+		width: 115px;
+        height: 115px;
+        margin-top: 17px;
+        margin-left: 1090px;
+        &:hover{
+        	width: 140px;
+        	height: 140px;
+        	margin-top: -12px;
+        	margin-left: 1063px;
+        }
+	}
+	.table{
+		width: 440px;
+        height: 130px;
+        margin-top: 150px;
+        margin-left: 530px;
+	}
+	.book-1{
+		width: 75px;
+        height: 50px;
+        margin-top: 162px;
+        margin-left: 778px;
+        &:hover{
+        	width: 150px;
+        	height: 100px;
+        	margin-top: 120px;
+        	margin-left: 750px;
+        }
+	}
+	.book-2{
+		width: 55px;
+        height: 40px;
+        margin-top: 150px;
+        margin-left: 900px;
+        &:hover{
+        	width: 120px;
+        	height: 95px;
+        	margin-top: 110px;
+        	margin-left: 870px;
+        }
+	}
+	.chocolate{
+		width: 40px;
+        height: 50px;
+        margin-top: 175px;
+        margin-left: 855px;
+	}
+	.test{
+		width: 25px;
+        height: 25px;
+        margin-top: 175px;
+        margin-left: 750px;
+	}
+	.table-2{
+		width: 400px;
+        height: 170px;
+        margin-top: 160px;
+        margin-left: 40px;
+	}
+	.notebook{
+		width: 120px;
+        height: 70px;
+        margin-top: 110px;
+        margin-left: 100px;
+        &:hover{
+        	width: 180px;
+        	height: 100px;
+        	margin-top: 75px;
+        	margin-left: 70px;
+        }
+	}
+	.book-3{
+		width: 77px;
+        height: 42px;
+        margin-top: 163px;
+        margin-left: 280px;
+        &:hover{
+        	width: 130px;
+        	height: 95px;
+        	margin-top: 110px;
+        	margin-left: 260px;
+        }
+	}
+	.news{
+		width: 60px;
+        height: 40px;
+        margin-top: 220px;
+        margin-left: 1290px;
+        &:hover{
+        	width: 100px;
+        	height: 70px;
+        	margin-top: 190px;
+        	margin-left: 1270px;
+        }
+	}
+	.medical{
+		width: 65px;
+        height: 50px;
+        margin-top: 270px;
+        margin-left: 1290px;
+        &:hover{
+        	width: 90px;
+        	height: 75px;
+        	margin-top: 235px;
+        	margin-left: 1270px;
+        }
+	}
+
+}
+
+
+/*============    Модальное окно Общие настройки    ===========*/
+	.modal-content{
+		background: #F5F3E4;
+	}
+	.modal-header{
+		border-bottom: none;
+		margin-top: -35px;
+	.close{
+		margin-right: 135px;
+		opacity: 0.9;
+	}	
+	}
+
+/*============    Модальное окно Спорт    ===========*/
+	.line{
+		border-right: 1px solid #ccc;
+		padding-right: 15px;
+	}
+	p{
+	    color: #000000;
+	}
+
+	.modal-dialog-1{
+		margin-left: 20px;
+		margin-top: 95px;
+		padding-right: 40px;
+	}
+    .top{
+    	height: 15px;
+    	width: 30px;
+    }
+
+/*============    Модальное окно праздники    ===========*/
+	.modal-dialog-2{
+	  margin-top: 105px;
+	  padding-right: 40px;
+	  margin-left: 850px;
+	  h3{
+	  	margin-top: 10px;
+	  	margin-bottom: 0px;
+	  }
+	  h4{
+	  	margin-top: 10px;
+	  	margin-bottom: 0px;
+
+	  }
+	  hr{
+	  	margin-top: 10px;
+	  	margin-bottom: 10px;
+	    border-bottom: 1px solid #CCCCCC;
+	  }
+    }
+
+/*============    Модальное окно календарь    ===========*/
+
+/*============    Модальное окно Заметки    ===========*/
+	.modal-dialog-4{
+		margin-left: 1000px;
+		margin-top: 170px;
+	    padding-left: 150px;
+	}
+	.modal-notes{
+		padding-bottom: 0px;
+	}
+
+/*============    Модальное окно Добавление    ===========*/
+	.modal-dialog-5{
+		margin-left: 400px;
+	    margin-right: 435px;
+		margin-top: 130px;
+	}
+	.add-body{
+		padding-top: 0px;
+	    h3{
+	    	margin-top: 15px;
+			text-align: center;
+			margin-bottom: 30px;
+	       span{
+			text-transform: uppercase;
+		    font-weight: 600;
+		    font-size: 22px;
+			color: #FF9933;
+			box-shadow: 0 0 5px 1px;
+		  }
+	    }
+	    input{
+	    	margin-bottom: 25px;
+	    	margin-top: -5px;
+	    	border-radius: 4px;
+	    	padding-top: 4px;
+	    	padding-bottom: 4px;
+	    	padding-right: 80px;
+	    	padding-left: 5px;
+	    	margin-left: 30px;
+
+	    	&:focus{
+	    		box-shadow: 0 0 1px 1px #FF9933;
+			    outline: none;
+	    	}
+	    }
+	    p{
+	    	font-weight: 600;
+	    	font-size: 15px;
+	    	margin-left: 50px;
+	    	margin-bottom: 35px;
+	    }
+	    textarea{
+	    	margin-bottom: 25px;
+	    	border-radius: 4px;
+	    	margin-left: 30px;
+	    	&:focus{
+	    		box-shadow: 0 0 1px 1px #FF9933;
+			    outline: none;
+	    	}
+	    }
+	    span#feedback{
+	    	font-size: 14px;
+	    	color: #B00000;
+	    }
+	    button{
+	  	    margin-top: 20px;
+	  	    margin-left: 10px;
+		    border: none; // чистим изначальное её оформление 
+	    	background-color: transparent; // что бы фон просвечивался 
+	    	padding: 11px 21px; // сверху 20 по бокам 35
+	        color: #ff9933	; // цвет текста
+	        text-transform: uppercase;
+	        font-size: 15px;
+	        border: 2px solid #ff9933;
+	            &:hover{
+	                 background-color: rgba(255, 255, 255, 0.6);  // при наведении цает становится прозрачным на 0.5 
+	            }
+	    }
+
+	}
+
+/*============    Модальное окно Гитара    ===========*/
+	.modal-dialog-6{
+		margin-left: 303px;
+	    margin-right: 313px;
+		margin-top: 130px;
+	}
+	.modal-guitar-body{
+		padding-top: 10px;
+		padding-left: 5px;
+		padding-right: 5px;
+		background: url(../img/guitar_fon.jpg);
+		opacity: 0.8;
+		box-shadow: 0 0 5px 7px;
+	    img{
+	    	width: 340px;
+	    	height: 230px;
+            opacity: 0.7;
+           // padding-right: 10px;
+            margin-left: 10px;
+               -webkit-filter: blur(1px);
+			  -moz-filter: blur(1px);
+			  -o-filter: blur(1px);
+			  -ms-filter: blur(1px);
+			  filter: blur(1px);
+	    }
+	    // .card{
+     // 	padding: 5px;
+	    // border: 2px solid transparent; // что бы не скакала рамка  
+	    // 	&:hover{
+		  	// 	background-color: #fafdfa;
+		  	// 	border: 2px solid #666; // ширина рамки , сплошная , цвет 
+		  	// }
+	    // }
+	    .modal-guitar-text{
+	    	position: absolute;
+            text-transform: uppercase;
+            z-index: 2;
+            text-align: center;
+            font-size: 24px;
+            font-weight: 800;
+            opacity: 1;
+	    }
+	   	p#atpo{
+	        margin-top: 20px;
+	        padding-left: 50px;
+	    }
+	   	p#v{
+	   	    margin-top: 30px;
+	   	    padding-left: 90px;
+	    }
+	  
+  	}	
+
+/*============    Модальное окно Музыка    ===========*/
+	.modal-music-body{
+		padding-top: 10px;
+		padding-left: 5px;
+		padding-right: 5px;
+		background: url(../img/music_fon.jpg);
+		background-size: 100% 100%;
+		opacity: 0.8;
+		box-shadow: 0 0 5px 7px;
+	    img{
+	    	width: 340px;
+	    	height: 230px;
+            opacity: 0.9;
+           // padding-right: 10px;
+            margin-left: 10px;
+               -webkit-filter: blur(1px);
+			  -moz-filter: blur(1px);
+			  -o-filter: blur(1px);
+			  -ms-filter: blur(1px);
+			  filter: blur(1px);
+			  &:hover{
+			  	opacity: 1;
+			  }
+	    }
+ 	}	  	
+/*============    Модальное окно англ    ===========*/
+	.modal-english-body{
+		padding-top: 10px;
+		padding-left: 5px;
+		padding-right: 5px;
+		background: url(../img/english_fon.jpg);
+		background-size: 100% 100%;
+		opacity: 0.9;
+		box-shadow: 0 0 5px 7px;
+	    img{
+	    	width: 340px;
+	    	height: 230px;
+            opacity: 0.9;
+           // padding-right: 10px;
+            margin-left: 10px;
+               -webkit-filter: blur(1px);
+			  -moz-filter: blur(1px);
+			  -o-filter: blur(1px);
+			  -ms-filter: blur(1px);
+			  filter: blur(1px);
+	    }
+	    .modal-guitar-text{
+	    	position: absolute;
+            text-transform: uppercase;
+            z-index: 2;
+            text-align: center;
+            font-size: 24px;
+            font-weight: 800;
+            opacity: 1;
+	    }
+	   	p#study-english-p{
+	        margin-top: 20px;
+	        padding-left: 50px;
+	    }
+	   	p#futurama-fox-p{
+	   	    margin-top: 30px;
+	   	    padding-left: 90px;
+	    }
+	  
+  	}
+/*============    Модальное окно TV    ===========*/
+	.modal-dialog-7{
+		margin-left: 303px;
+	    margin-right: 313px;
+		margin-top: 60px;
+	}
+	.modal-tv-body{
+	    padding-top: 10px;
+		padding-left: 5px;
+		padding-right: 5px;
+		background: url(../img/cinema-fon.jpg);
+		background-size: 100% 100%;
+		opacity: 0.8;
+		box-shadow: 0 0 5px 7px;
+	    img{
+	    	width: 280px;
+	    	height: 180px;
+            opacity: 0.9;
+           // padding-right: 10px;
+            margin-left: 10px;
+               -webkit-filter: blur(1px);
+			  -moz-filter: blur(1px);
+			  -o-filter: blur(1px);
+			  -ms-filter: blur(1px);
+			  filter: blur(1px);
+			  &:hover{
+			  	opacity: 1;
+			  }
+	    }
+ 	}
+/*============    Модальное окно Работа и Учёба    ===========*/
+	.modal-dialog-8{
+		margin-left: 170px;
+	    margin-right: 170px;
+		margin-top: 55px;
+	}
+	.modal-work_study-body{
+     	padding-top: 10px;
+		padding-left: 5px;
+		padding-right: 5px;
+		background: url(../img/work-study_fon.jpg);
+		background-size: 100% 100%;
+		opacity: 0.9;
+		box-shadow: 0 0 5px 7px;
+	    img{
+	    	width: 210px;
+	    	height: 120px;
+            opacity: 0.9;
+           // padding-right: 10px;
+            margin-left: 10px;
+               -webkit-filter: blur(1px);
+			  -moz-filter: blur(1px);
+			  -o-filter: blur(1px);
+			  -ms-filter: blur(1px);
+			  filter: blur(1px);
+	    }
+	    .modal-guitar-text{
+	    	position: absolute;
+            text-transform: uppercase;
+            z-index: 2;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 800;
+            opacity: 1;
+            margin-top: 20px;
+	        padding-left: 50px;
+        }
+ 
+  	}
+/*============    Модальное окно наруто    ===========*/
+	.modal-naruto-body{
+		padding-top: 10px;
+		padding-left: 5px;
+		padding-right: 5px;
+		background: url(../img/naruto_fon.png);
+		background-size: 100% 100%;
+		opacity: 0.8;
+		box-shadow: 0 0 5px 7px;
+	    img{
+	    	width: 340px;
+	    	height: 230px;
+            opacity: 0.9;
+           // padding-right: 10px;
+            margin-left: 10px;
+               -webkit-filter: blur(1px);
+			  -moz-filter: blur(1px);
+			  -o-filter: blur(1px);
+			  -ms-filter: blur(1px);
+			  filter: blur(1px);
+			  &:hover{
+			  	opacity: 1;
+			  }
+	    }
+ 	}
+/*============    Модальное окно Путешествия  ===========*/
+	.modal-dialog-9{
+		margin-left: 200px;
+	    margin-right: 200px;
+		margin-top: 60px;
+	}
+	.modal-bag-body{
+		padding-top: 10px;
+		padding-left: 5px;
+		padding-right: 5px;
+		background: url(../img/bag_fon.jpg);
+		background-size: 100% 100%;
+		opacity: 0.9;
+		box-shadow: 0 0 5px 7px;
+	    img{
+	    	width: 280px;
+	    	height: 180px;
+            opacity: 0.9;
+           // padding-right: 10px;
+            margin-left: 10px;
+               -webkit-filter: blur(1px);
+			  -moz-filter: blur(1px);
+			  -o-filter: blur(1px);
+			  -ms-filter: blur(1px);
+			  filter: blur(1px);
+	    }
+	    .modal-guitar-text{
+	    	position: absolute;
+            text-transform: uppercase;
+            z-index: 2;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 800;
+            opacity: 1;
+            margin-top: 20px;
+	        padding-left: 50px;
+        }
+ 
+  	} 	  	 		  	  	
+/*============    ШРИФТЫ    ===========*/
+
+/*============    ПОДВАЛ    ===========*/
+
+/*============    	ВСПЛЫВАЮЩИЕ ОКНА    ===========*/
+
+/*============    	АДАПТИВ    ===========*/
+
+@media(min-width:0px) and (max-width:320px) {
+	
+}
+
+@media(min-width:321px) and (max-width:480px) {
+	
+}
+
+@media(min-width:481px) and (max-width:768px) {
+	
+}
+
+@media(min-width:769px) and (max-width:992px) {
+	
+}
+
+@media(min-width:993px) and (max-width:1200px) {
+	
+}
+
+
+

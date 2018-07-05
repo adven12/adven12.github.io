@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>CALENDAR</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+
+    <!--подключаем файлы стилей для календаря -->
+     <link rel="stylesheet" href="css/css/eventCalendar.css">
+     <link rel="stylesheet" href="css/css/eventCalendar_theme_responsive.css">
+
+  
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="section" id="section_first">
+      <header>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-1 dumbbell">
+            <a href="#" data-toggle="modal" data-target="#sport"><img src="img/dumbbell2.png" alt="Гантеля" class="img-responsive"></a>
+          </div>
+          <div class="col-md-3" align="middle">
+            <ul class="star-rating">
+                  <li><a href="#" class ="star1">Ужасно</a></li>
+                  <li><a href="#" class="star2">Плохо</a></li>
+                  <li><a href="#" class="star3">Нормально</a></li>
+                  <li><a href="#" class="star4">Хорошо</a></li>
+                  <li><a href="#" class="star5">Отлично</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4 text-center namesite">
+            <a href="index.html"><h3>DOWNTOWN</h3></a>
+          </div>
+          <div class="col-md-2 calendar" align="right" id="header_date"></div>
+          <div class="col-md-2 w-of-f">
+            <img src="img/logo.png" alt="Колесо Фортуны" class="img-responsive" align="right">
+          </div>
+        </div>
+      </div>
+     </header>
+
+     <section id="main">
+  
+    <div class="row">
+      <div class="col-md-1">
+      <a href="index.html"><img src="img/back.png" alt="Назад" class="back"></a>
+      </div>
+      <div class="col-md-10">
+      <div class="container">
+      <div id="eventCalendar" class="center-calendar"></div>
+      </div>
+      </div>
+      <div class="col-md-1 bl">
+      <img src="img/notes.png" alt="Бокавые стрелки" class="img-responsive" height="40" width="30" align="right" data-toggle="modal" data-target="#notes">
+      </div>
+      </div>
+     </section>
+    </div>
+
+
+   <!-- Modal Праздник-->
+        <div class="modal fade" id="celebration" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog-2 modal-sm">
+            <div class="modal-content">
+              <div class="modal-header">
+                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><img src="img/top.png" alt="Вверх" class="img-responsive top"></button>
+              </div>
+              <div class="modal-body" style="padding-top: 0px;">
+                <div id ="modal_develop"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<!-- Modal Заметки-->
+        <div class="modal fade" id="notes" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog-4">
+            <div class="modal-content modal-notes">
+          
+              <div class="modal-body">
+               <div class="row">
+                <p>1. Лампочка<br>
+                   2. Пропуск<br>
+                   3. Студгородок</p>
+               </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+            <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+    <script>
+      $(document).ready(
+          function() {
+              $("html").niceScroll({cursorcolor:"#000"});
+          }
+      );
+    </script>
+
+  <script src="js/scripts.js"></script>
+
+
+
+      <!--Подключаем дже єс фалы для календаря-->
+  <script src="js/moment.js"></script>
+  <script src="js/jquery.eventCalendar.js"></script>
+  <!--Сам код для добавления календаря-->
+  <script>
+   $(function(){
+    var eventsInline = [
+       {"date": "2018-01-01 10:15:20", "title": "Новый год", "description": "", "url": ""},
+       {"date": "2018-01-07 10:15:20", "title": "Рождество Христово", "description": "", "url": ""},
+       {"date": "2018-01-08 10:15:20", "title": "ДР Маши Сергиенко", "description": "", "url": ""},
+       {"date": "2018-01-23 10:15:20", "title": "ДР Юрки Канищива", "description": "", "url": ""}, 
+       {"date": "2018-01-26 10:15:20", "title": "ДР Вики Коши", "description": "", "url": ""}, 
+       {"date": "2018-01-29 10:15:20", "title": "ДР Катюхи Трифанкиной", "description": "", "url": ""},
+       {"date": "2018-02-04 10:15:20", "title": "ДР БАТИ и брата Кирюхи", "description": "", "url": ""},
+       {"date": "2018-02-11 10:15:20", "title": "ДР МАМЫ", "description": "", "url": ""},
+       {"date": "2018-02-15 10:15:20", "title": "У кого-то др", "description": "", "url": ""},
+       {"date": "2018-03-6 10:15:20", "title": "ДР Катюхи Редькиной и Макса Мирненко", "description": "", "url": ""},
+       {"date": "2018-03-8 10:15:20", "title": "Международный женский день", "description": "", "url": ""},
+       {"date": "2018-03-11 10:15:20", "title": "ДР Кости Макарицкого", "description": "", "url": ""},
+       {"date": "2018-03-16 10:15:20", "title": "ДР Софии Шевченко", "description": "", "url": ""},
+       {"date": "2018-03-17 10:15:20", "title": "ДР Игорька Сидорко", "description": "", "url": ""},
+       {"date": "2018-03-19 10:15:20", "title": "ДР Владоса Алдошина", "description": "", "url": ""},
+       {"date": "2018-03-25 10:15:20", "title": "ДР Некита Мальшакова", "description": "", "url": ""},
+       {"date": "2018-03-27 10:15:20", "title": "ДР Михи Ковалевского", "description": "", "url": ""},
+       {"date": "2018-04-04 10:15:20", "title": "ДР Влада Цокура", "description": "", "url": ""},
+       {"date": "2018-04-05 10:15:20", "title": "ДР Нашего хаевского театра", "description": "", "url": ""},
+       {"date": "2018-04-07 10:15:20", "title": "В гараж к Марку", "description": "", "url": ""},
+       {"date": "2018-04-08 10:15:20", "title": "Паска", "description": "", "url": ""},
+       {"date": "2018-04-12 10:15:20", "title": "театр Чушь и я", "description": "", "url": ""},
+       {"date": "2018-04-13 10:15:20", "title": "2 тур Золотого Байта", "description": "", "url": ""},
+       {"date": "2018-04-15 10:15:20", "title": "Поминальный день", "description": "", "url": ""},
+       {"date": "2018-04-16 10:15:20", "title": "Поминальный день", "description": "", "url": ""},
+       {"date": "2018-04-16 10:15:20", "title": "Лига смеха 18:00 акт залл", "description": "", "url": ""},
+       {"date": "2018-04-19 10:15:20", "title": "Ярмарка вакансий 10:00 - 15:00", "description": "", "url": ""},
+       {"date": "2018-04-21 10:15:20", "title": "Хакатон 9:30", "description": "", "url": ""},
+       {"date": "2018-04-27 10:15:20", "title": "ДР Стаса Элитского", "description": "", "url": ""},
+       {"date": "2018-04-30 10:15:20", "title": "ДР Олени Ковальчук", "description": "", "url": ""},
+       {"date": "2018-05-05 10:15:20", "title": "ДР Валерии Ломовой и Марины Мотречко", "description": "", "url": ""},
+       {"date": "2018-05-09 10:15:20", "title": "День Победы и Выступление со спектаклем", "description": "", "url": ""},
+       {"date": "2018-05-10 10:15:20", "title": "ДР Серого Шевченка", "description": "", "url": ""},
+       {"date": "2018-05-18 10:15:20", "title": "1000 и одна ночь!", "description": "", "url": ""},
+       {"date": "2018-05-19 10:15:20", "title": "ДР Денчика Нерози", "description": "", "url": ""},
+       {"date": "2018-05-22 10:15:22", "title": "ДР Виталины Тимощук", "description": "", "url": ""},
+       {"date": "2018-05-26 10:15:22", "title": "День Хаи", "description": "", "url": ""},
+       {"date": "2018-06-12 10:15:22", "title": "ДР Андрея Злаги", "description": "", "url": ""},
+       {"date": "2018-06-21 10:15:22", "title": "ДР Маши Баранник", "description": "", "url": ""},
+       {"date": "2018-06-23 10:15:22", "title": "ДР Льва Слабуна", "description": "", "url": ""},
+       {"date": "2018-06-28 10:15:22", "title": "ДР Ленки Бачуриной", "description": "", "url": ""},
+       {"date": "2018-07-04 10:15:22", "title": "ДР Лизы Ткаченко", "description": "", "url": ""},
+       {"date": "2018-07-14 10:15:22", "title": "ДР Сани Кареева", "description": "", "url": ""},
+       {"date": "2018-07-16 10:15:22", "title": "ДР Марка Браги", "description": "", "url": ""},
+       {"date": "2018-07-25 10:15:22", "title": "ДР Надежды Анатольевны", "description": "", "url": ""},
+       {"date": "2018-07-26 10:15:22", "title": "ДР Андрея Мотречко", "description": "", "url": ""},
+       {"date": "2018-08-04 10:15:22", "title": "ДР Стаса Пивовара", "description": "", "url": ""},
+       {"date": "2018-08-15 10:15:22", "title": "ДР Димона Кошкарева", "description": "", "url": ""},
+       {"date": "2018-08-16 10:15:22", "title": "ДР Ромы Вербицкого", "description": "", "url": ""},
+       {"date": "2018-08-31 10:15:22", "title": "ДР Алёны Руденковой", "description": "", "url": ""},
+       {"date": "2018-09-04 10:15:22", "title": "ДР Денчика Элитского", "description": "", "url": ""},
+       {"date": "2018-09-05 10:15:22", "title": "ДР Жеки Элитского", "description": "", "url": ""},
+       {"date": "2018-09-11 10:15:22", "title": "ДР Алёны Сидоровой", "description": "", "url": ""},
+       {"date": "2018-09-13 10:15:22", "title": "ДР Макса Рожко", "description": "", "url": ""},
+       {"date": "2018-09-16 10:15:22", "title": "ДР Вовы Легкобыта", "description": "", "url": ""},
+       {"date": "2018-09-30 10:15:22", "title": "ДР Макса Мельника", "description": "", "url": ""},
+       {"date": "2018-10-02 10:15:22", "title": "ДР Анастасии Сусловец", "description": "", "url": ""},
+       {"date": "2018-10-05 10:15:22", "title": "ДР Альбины Падалки", "description": "", "url": ""},
+       {"date": "2018-10-12 10:15:22", "title": "ДР Димона Геращенко", "description": "", "url": ""},
+       {"date": "2018-10-19 10:15:22", "title": "ДР Тани Алёшкиной", "description": "", "url": ""},
+       {"date": "2018-10-19 10:15:22", "title": "ДР Насти Дьяченко", "description": "", "url": ""},
+       {"date": "2018-11-21 10:15:22", "title": "ДР Таня Демченко", "description": "", "url": ""},
+       {"date": "2018-11-25 10:15:22", "title": "ДР Махи Максакова", "description": "", "url": ""},
+       {"date": "2018-12-09 10:15:22", "title": "ДР Димона Элитского", "description": "", "url": ""},
+       
+    ];
+    $('#eventCalendar').eventCalendar({
+     jsonData: eventsInline,
+     jsonDateFormat: 'human',
+            locales: {
+            locale: "en",
+          txt_noEvents: "There are no events in this period",
+          txt_SpecificEvents_prev: "",
+          txt_SpecificEvents_after: "events",
+          txt_next: "",
+          txt_prev: "",
+          txt_NextEvents: "Next events:",
+          txt_GoToEventUrl: "See the event",
+            moment: {
+                "months" : [ "January", "February", "March", "April", "May", "June",
+                        "July", "August", "September", "October", "November", "December" ],
+                "monthsShort" : [ "Jan", "Feb", "Mar", "Abr", "May", "Jun",
+                        "Julio", "Aug", "Sep", "Oct", "Nov", "Dec" ],
+                "weekdays" : [ "Sunday","Monday ","Tuesday","Wednesday",
+                        "Thursday","Friday","Saturday" ],
+                "weekdaysShort" : [ "Sun","Mon","Tue","Wed",
+                        "Thu","Fri","Sat" ],
+                "weekdaysMin" : [ "Su","Mo","Tu","We","Th","Fr","Sa" ],
+                "longDateFormat" : {
+                    "LT" : "H:mm",
+                    "LTS" : "LT:ss",
+                    "L" : "DD/MM/YYYY",
+                    "LL" : "D [de] MMMM [de] YYYY",
+                    "LLL" : "D [de] MMMM [de] YYYY LT",
+                    "LLLL" : "dddd, D [de] MMMM [de] YYYY LT"
+                }
+               
+            }
+          }
+    });
+   });
+  </script>
+
+
+  </body>
+</html>

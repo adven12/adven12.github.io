@@ -1,0 +1,370 @@
+/*============   Базовые настройки    ===========*/
+ body{
+		//height: 1997px;
+		//background: linear-gradient(to top, #143A1A, #103E14);
+		//background: #FFF;
+		a:hover,
+		a:focus,
+		a:visited,
+		a:active{
+			text-decoration: none;
+			outline: none;
+		}
+		button:focus{
+			outline: none;
+		}
+		//display:none;
+		//background-image: url(../img/musicians/noize_mc/rain.jpg);
+	}
+
+/*============    ШАПКА    ===========*/
+	header{
+
+		    height: 80px;
+		   //background: linear-gradient(to top, #3F4043, #444548);
+		    background-color: rgba(68,69,72,0.9); 
+    	    padding-top:15px;
+		    padding-bottom: 10px;
+
+		 .dumbbell{
+		    img{
+		    	margin-top: 10px;
+		        margin-left: -30px;
+		    }
+
+		 }
+		 .star-rating{
+			  margin-top: 7px;
+			  margin-left: -30px;
+			  padding: 0;
+			  list-style: none;
+			  width: 195px;
+			  height: 32px;
+			  position: relative;
+			  background: url(../img/reting-star.png);
+
+			   li{
+				  float: left;
+				  margin: 0;
+				  padding: 0;
+			   a{
+				  display: block;
+				  width: 39px;
+				  height: 33px;
+				  text-indent: -9999px;
+				  position: absolute;
+				  text-decoration: none;
+				  z-index: 10;
+					  &:hover{
+					  background: url(../img/reting-star-2.png) left;
+					  left: 0;
+					  z-index: 2;
+					}
+			    }
+				 .star1 {
+					  left: 0;
+						&:hover {
+						  width: 39px;
+						}
+				 }
+				 .star2{
+					  left: 39px;
+						&:hover{
+						  width: 78px;
+						}
+				 }
+				 .star3{
+					  left: 78px;
+						&:hover{
+						  width: 117px;
+						}
+				 }
+				 .star4{
+					  left: 117px;
+						&:hover {
+						  width: 156px;
+						}
+					}
+				 .star5{
+					  left: 156px;
+						&:hover {
+						  width: 195px;
+						}
+					}
+					        
+			   }
+	     }
+		.namesite{
+			h3{
+		    	margin-top: 15px;
+				color: #FDFDFD;
+				font-size: 24px;
+				font-weight:500;
+			}
+		}
+		.calendar{
+		 	a{
+		 		color: #99999A;
+		 	}
+		 	h3{
+		 		margin-top: 14px;
+		 		color: #99999A;
+		 	}
+
+		}
+		.w-of-f{
+		 	img{
+		 	 	height: 45px;
+		 	 	width: 45px;
+		 	 	}
+		}
+	}
+
+
+
+/*============    ГЛАВНЫЙ ЭКРАН    ===========*/
+section#main{
+	height: 660px;
+	.back{
+		width: 90px;
+		height: 70px;
+		opacity: 0.7;
+		margin-left: 20px;
+	    margin-right: 50px;	
+			&:hover{
+		      opacity: 1;
+			}		
+    }
+	.search{
+	    
+	    margin-left: 425px;
+	    margin-top: 20px;
+	    padding-left: 20px;
+	    padding-right: 20px;
+        margin-bottom: 30px;
+	}
+    .card{
+     	padding: 5px;
+	    border: 2px solid transparent; // что бы не скакала рамка  
+	    	&:hover{
+		  		background-color: #fafdfa;
+		  		border: 2px solid #666; // ширина рамки , сплошная , цвет 
+		  	}
+	}
+    .music_bands{
+      	img{
+      		height: 100px;
+      		width: 160px;
+      	}
+      	h4{
+      		text-align: center;
+       		color: #333333;
+      	}
+    }
+    .albums{
+        margin-top: 40px;
+        img{
+        	height: 80px;
+      		width: 110px;
+      	}
+      	h4{
+      		text-align: center;
+       		color: #333333;
+       		font-size: 13px;
+       		font-weight: 600;
+       		margin-top: 2px;
+      	}
+      	ul{
+      		margin-bottom: 0px;
+      	}    	
+        border-left: 2px solid #ccc;
+    }
+    li{
+    list-style-type: none; /* Убираем маркеры */
+    }
+    .center_artist{
+      	img{
+      		margin-top: 70px;
+      		margin-right:30px;
+      		height: 400px;
+      		width: 260px;
+      	}
+     
+    }
+    .center_album{
+        img#on_track
+        {	
+      		height: 300px;
+      		width: 400px;
+      		margin-top: 90px;	
+      		margin-left: 0px;
+      	
+      	}
+        img#off_track
+      	{
+      	height: 300px;
+      	width: 400px;
+      	margin-top: 20px;	
+      	margin-left: 60px;
+      	}
+       	p{
+      		text-align: right;
+      		color:#FAFAFA;
+     		font-weight: 600;
+     		font-size: 14px;
+     		margin-bottom: 5px;
+     		margin-top: 5px;
+     		margin-right: -130px;
+        }
+      	audio{
+      		margin-left: 500px;
+      	}
+    }
+    .playlist{
+     	margin-top: 10px;
+     	border: none;
+     	ul{
+     		padding-left: 0px;
+     	}
+     	li{
+            margin-top: 5px;
+     		p{
+     		color:#FAFAFA;
+     		font-weight: 600;
+     		font-size: 14px;
+     		margin-bottom: 5px;
+     	  	}
+     	}
+    }
+	.bl{
+		top: 120px; //высота шапки в пикселях
+		right: 8px;
+		position: fixed;
+		z-index: 100;
+		img{
+			height: 30px;
+		    width: 30px;
+			margin-top: 120px;
+			margin-right: 8px;
+			transition: all 0.1s ease;
+				&:hover{
+				height: 45px;
+				width: 35px;
+			    }
+		}
+	}
+}
+
+/*============    Подвал    ===========*/
+section#footer{
+	background-color: rgba(68,69,72,1); 
+	padding-bottom: 15px;
+	h4{
+		margin-top: 17px;
+	    color: #FDFDFD;
+	    margin-left: 50px;
+	}
+	.network{
+		img{
+		margin-top: 11px;
+		margin-left: 7px;
+	    }
+	}
+	.facebook{
+		margin-right: 30px; 
+	    width: 30px;
+	    height:30px;
+	    opacity: 0.5;
+			&:hover{
+			opacity: 0.8;
+			}
+	}
+	.vk{
+	    width: 30px;
+	    height:30px;
+	    opacity: 0.5;
+			&:hover{
+			opacity: 0.8;
+			}
+	}
+	.instagram{
+	    width: 30px;
+	    height:30px;
+	    opacity: 0.5;
+			&:hover{
+			opacity: 0.8;
+			}
+	}
+	.gmail{
+	    width: 30px;
+	    height:30px;
+	    opacity: 0.5;
+	 		&:hover{
+			opacity: 0.8;
+			}
+	}
+	.telegram{
+  	    width: 30px;
+	    height:30px;
+	    opacity: 0.5;
+			&:hover{
+			opacity: 0.8;
+			}
+	}
+}
+
+
+
+
+
+
+
+
+
+/*============    Модальное окно Общие настройки    ===========*/
+	.modal-content{
+		background: #F5F3E4;
+	}
+	.modal-header{
+		border-bottom: none;
+		margin-top: -35px;
+	.close{
+		margin-right: 135px;
+		opacity: 0.9;
+	}	
+	}
+	.top{
+    	height: 15px;
+    	width: 30px;
+    }
+/*============    Модальное окно праздники    ===========*/
+	.modal-dialog-2{
+	  margin-top: 105px;
+	  padding-right: 40px;
+	  margin-left: 850px;
+	  h3{
+	  	margin-top: 10px;
+	  	margin-bottom: 0px;
+	  }
+	  h4{
+	  	margin-top: 10px;
+	  	margin-bottom: 0px;
+
+	  }
+	  hr{
+	  	margin-top: 10px;
+	  	margin-bottom: 10px;
+	    border-bottom: 1px solid #CCCCCC;
+	  }
+		
+	}
+
+/*============    Модальное окно Заметки    ===========*/
+	.modal-dialog-4{
+		margin-left: 1000px;
+		margin-top: 170px;
+	    padding-left: 150px;
+	}
+	.modal-notes{
+		padding-bottom: 10px;
+	}
