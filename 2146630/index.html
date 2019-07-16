@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Frontend Developer</title>
+	 <!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-3">
+               <img src="img/avatar.png" alt="Аватар" class="avatar">
+			</div>
+			<div class="col-9 text-left descript">
+				<h4><b>Вероника Ростова</b></h4>
+				<p class="text-1">Менеджер по продажам</p>
+			    <p class="text-2">Подберу для вас самые лучшие предложения.<br>
+			                      Мои услуги абсолютно бесплатны</p>
+                <p class="text-right text-3">Услуг</p>	
+                <hr class="up">
+                <div class="services-outside">
+	                <div class="services-inside"><p id ="box-1">Ручное бронирование</p><span class="eleven"><b>11</b></span></div>
+	                <div class="services-inside"><p id="box-2">Пакетные туры</p><span class="three"><b>3</b></span></div>
+	                <p id="box-3">Отели</p><span class="one"><b>1</b></span>
+                </div>
+                <hr class="down">
+                <p id="box-all"><b>Всего<span class="all">15</span></b></p>
+			</div>
+		</div>
+        <div class="row">
+        	<div class="col-12 text-left comment-block">
+            <div class="comment-main">
+            	<h4><b>Последнии отзывы</b></h4>
+        		<p class="all-reviews">Все отзывы</p> 
+        		<div class="icons">
+        			<img src="img/icon_commens.png" alt="Иконка лайки"><span class="namI">131</span>
+        		    <img src="img/icon_likes.png" alt="Иконка комментарии" ><span class="namI">14</span>
+        		</div>
+            </div>
+
+        		<div id="comment_field">
+        			
+        		</div>	
+            </div>
+    	</div>
+	</div>
+
+    <div class="footer">
+    	<div class="container">
+    		<div class="row">
+        		<form>
+        			<div class="form-group text-center">
+        				<textarea name="new_comment" id="comment-body" class="form-control"></textarea>
+     				</div>
+        			<div class="form-group text-center">
+        				<button type="submit" id="comment-add" class="comment-button"><b>Написать консультанту</b></button>
+        			</div>
+        		</form>
+        	</div>
+        </div>
+    </div>
+
+
+
+
+
+
+<!-- <input type="button" data-toggle="modal"  href="#comment"> -->
+
+<!-- Modal --><!-- Пример готового модельного окна -->
+        <div class="modal fade" id="comment_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              </div>
+              <div class="modal-body">
+                <div class="form-group">
+                	<label for="comment-name">Enter your name:</label>
+                	<input type="text" class="form-control" id="comment-name" placeholder="Your name">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="js/scripts.js"></script>
+</body>
+</html>
