@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Frontend Developer</title>
 	 <!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -10,54 +11,72 @@
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="col-3">
-               <img src="img/avatar.png" alt="Аватар" class="avatar">
-			</div>
-			<div class="col-9 text-left descript">
-				<h4><b>Вероника Ростова</b></h4>
-				<p class="text-1">Менеджер по продажам</p>
-			    <p class="text-2">Подберу для вас самые лучшие предложения.<br>
-			                      Мои услуги абсолютно бесплатны</p>
-                <p class="text-right text-3">Услуг</p>	
-                <hr class="up">
-                <div class="services-outside">
-	                <div class="services-inside"><p id ="box-1">Ручное бронирование</p><span class="eleven"><b>11</b></span></div>
-	                <div class="services-inside"><p id="box-2">Пакетные туры</p><span class="three"><b>3</b></span></div>
-	                <p id="box-3">Отели</p><span class="one"><b>1</b></span>
-                </div>
-                <hr class="down">
-                <p id="box-all"><b>Всего<span class="all">15</span></b></p>
-			</div>
-		</div>
+			<div class="col-12 header">
+              <div class="avatar">
+                <img src="img/avatar.png" alt="Аватар" class="img-responsive avatar__img">
+              </div>
+              <div class="text-left worker-descript">
+                <h4 class="worker-descript__name"><b>Вероника Ростова</b></h4>
+                <p class="worker-descript__p1">Менеджер по продажам</p>
+                <p class="worker-descript__p2">Подберу для вас самые лучшие предложения.<br>
+                                  Мои услуги абсолютно бесплатны</p>
+              </div>         
+            </div>
+        </div>
         <div class="row">
-        	<div class="col-12 text-left comment-block">
-            <div class="comment-main">
-            	<h4><b>Последнии отзывы</b></h4>
-        		<p class="all-reviews">Все отзывы</p> 
-        		<div class="icons">
-        			<img src="img/icon_commens.png" alt="Иконка лайки"><span class="namI">131</span>
-        		    <img src="img/icon_likes.png" alt="Иконка комментарии" ><span class="namI">14</span>
-        		</div>
+            <div class="col-3"></div>
+            <div class="col-9 services-types">
+                <p class="text-right services-types__p1">Услуг</p>	
+                <hr class= "services-types__hr1">
+                <div class="row">
+                  <div class="col-9 services-types__col-9 text-left"><p class= "services-types__box1">Ручное бронирование</p></div>
+                  <div class="col-3 services-types__col-3 text-right"><span class="services-types__box1_numeral"><b>11</b></span></div>
+                </div>
+	              <div class="row">
+                  <div class="col-9 services-types__col-9 text-left"><p class= "services-types__box2">Пакетные туры</p></div>
+                  <div class="col-3 services-types__col-3 text-right"><span class="services-types__box2_numeral"><b>3</b></span></div>
+                </div>
+	              <div class="row">
+                <div class="col-9 services-types__col-9 text-left"><p class= "services-types__box3">Отели</p></div>
+                <div class="col-3 services-types__col-3 text-right"><span class="services-types__box3_numeral"><b>1</b></span></div>
+                </div>
+                <hr class= "services-types__hr2">
+                <div class="row">
+                  <div class="col-9 services-types__col-9 text-left"><p class= "services-types__boxall"><b>Всего</b></div>
+                  <div class="col-3 services-types__col-3 text-right"><b><span class="services-types__boxall_numeral">15</span></b></p></div>
+                </div>
+		    </div>
+        </div>
+        <div class="row comment-main">
+            <div class="col-9 comment-main__col-9">
+              <h4 class="comment-main__last text-left"><b>Последнии отзывы</b></h4>
+        		  <p class="comment-main__all text-left">Все отзывы</p>
+            </div> 
+        	  <div class="comment-main__icons col-3 text-right">
+              <img src="img/icon_commens.png" alt="Иконка лайки"><span class="comment-main__icons_numeral">131</span>
+              <img src="img/icon_likes.png" alt="Иконка комментарии" ><span class="comment-main__icons_numeral">14</span>
             </div>
-
-        		<div id="comment_field">
-        			
-        		</div>	
-            </div>
-    	</div>
-	</div>
+        </div>
+        <div class="row">
+   		   <div id="comment_field" class="col-12 comment-field">
+    
+   		   </div>  
+   	    </div>	
+    </div>
 
     <div class="footer">
     	<div class="container">
     		<div class="row">
-        		<form>
-        			<div class="form-group text-center">
-        				<textarea name="new_comment" id="comment-body" class="form-control"></textarea>
-     				</div>
-        			<div class="form-group text-center">
-        				<button type="submit" id="comment-add" class="comment-button"><b>Написать консультанту</b></button>
-        			</div>
-        		</form>
+        		<div class="col-12 new-comment">
+                  <form class="new-comment__footer-color">
+                        <div class="text-center new-comment__div">
+                            <textarea name="new_comment" id="comment-body" class="new-comment__textarea"></textarea>
+                        </div>
+                        <div class="text-center new-comment__div">
+                            <button type="submit" id="comment-add" class="new-comment__button"><b>Написать консультанту</b></button>
+                        </div>
+                    </form>      
+                </div>
         	</div>
         </div>
     </div>
@@ -67,29 +86,14 @@
 
 
 
-<!-- <input type="button" data-toggle="modal"  href="#comment"> -->
-
-<!-- Modal --><!-- Пример готового модельного окна -->
-        <div class="modal fade" id="comment_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              </div>
-              <div class="modal-body">
-                <div class="form-group">
-                	<label for="comment-name">Enter your name:</label>
-                	<input type="text" class="form-control" id="comment-name" placeholder="Your name">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	<script src="js/scripts.js"></script>
+    <!--[if lt IE 9] для старых браузеров >
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
 </body>
 </html>

@@ -4,16 +4,13 @@ let flag = false;
 
 document.getElementById('comment-add').onclick = function(){
 	event.preventDefault();   // блок события обновления 
-	let commentName = document.getElementById('comment-name');
 	let commentBody = document.getElementById('comment-body');
 
 	let comment = {
-		name: commentName.value,
 		body: commentBody.value,
 		time: Date.now()/1000
 	} 
 
-    commentName.value = '';
     commentBody.value = '';
     comments.push(comment);
 
@@ -30,16 +27,13 @@ document.onkeydown  = function(event){
 	if(event.code == 'Enter' && flag){
 		flag = false;
 	event.preventDefault();   // блок события обновления 
-		let commentName = document.getElementById('comment-name');
 		let commentBody = document.getElementById('comment-body');
 
 		let comment = {
-			name: commentName.value,
 			body: commentBody.value,
 			time: Date.now()/1000
 		} 
 
-	    commentName.value = '';
 	    commentBody.value = '';
 	    comments.push(comment);
 
@@ -63,9 +57,9 @@ function showComments(){
 	let commentField = document.getElementById('comment_field');
 	let out = '';
 	comments.forEach(function(item){
-        out = out + `<p class="text-left style-comment-name"><b>Гость</b></p>`;
-        out = out + `<p class="text-left style-comment-time">${timeConverter(item.time)}</p>`;
-        out = out + `<p class="text-left style-comment-body">${item.body}</p>`;
+        out = out + `<p class="text-left comment-field__name"><b>Гость</b></p>`;
+        out = out + `<p class="text-left comment-field__time">${timeConverter(item.time)}</p>`;
+        out = out + `<p class="text-left comment-field__body">${item.body}</p>`;
 	});
 	commentField.innerHTML = out;
 }
