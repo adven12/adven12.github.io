@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">         <!--отбражать страницу в мастабе 100% -->
     <meta http-equiv="content-type" content="text/html; charset=windows-1251" /> <!--корректная Загрузка файлов с сервера на русском-->
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
     <title>Спец</title>
-
     <!-- Bootstrap --> <!-- файлы стилей -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
@@ -25,16 +23,16 @@ $file = basename($path, ".pdf"); // $file содержит "tezisy3"
 
     <header>
        <div class="row">
-       <div class="col-lg-1 col-md-1 col-sm-1" id="click_back"><a href="#"><img src="img/back.png" alt="Назад" class="back"></a></div>
+       <div class="col-1" id="click_back"><a href="#"><img src="img/back.png" alt="Назад" class="back"></a></div>
        <div class="container">
-        <div class="col-xl-9 col-lg-9 col-md-11 col-sm-11">
+        <div class="col-lg-9 col-12">
           <div class="section_header text-center">
           <a href="#"><h3 class="ru name">Информационная поддержка по курсу "Специальное программное обеспечение информационных технологий" </h3></a>
           <a href="#"><h3 class="ua name">Інформаційна підтримка по курсу "Спеціальне програмне забезпечення інформаційних технологій" </h3></a>
           <a href="#"><h3 class="eng name" id="eng_name">Information support for the course "Special Information Technology Software" </h3></a>
             </div>
         </div>
-        <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 multilanguage">
+        <div class="col-lg-3 col-12 multilanguage">
           <a href="#"><p class="card wow" data-wow-delay="0.2s" id="Ru">Рус</p></a>
           <a href="#"><p class="card wow" data-wow-delay="0.2s" id="Ua">Укр</p></a>
           <a href="#"><p class="card wow" data-wow-delay="0.2s" id="Eng">Eng</p></a>
@@ -47,7 +45,7 @@ $file = basename($path, ".pdf"); // $file содержит "tezisy3"
     <section id="content_1">
       <div class="container">
       <div class="row text-center">
-        <div class="col-md-6">
+        <div class="col-md-6 col-12">
           <div class="card wow bounceInUp entry" data-wow-delay="0.2s">
             <div class="formas">
             <h4 class="ru">Преподаватель</h4>
@@ -58,7 +56,7 @@ $file = basename($path, ".pdf"); // $file содержит "tezisy3"
             </div>
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 col-12">
           <div class="card wow bounceInUp entry student" data-wow-delay="0.4s">
             <h4  class="ru stud">Студент</h4>
             <h4  class="ua stud">Студент</h4>
@@ -75,7 +73,7 @@ $file = basename($path, ".pdf"); // $file содержит "tezisy3"
   <section id="content_2">
        <div class="container">
       <div class="row text-center">
-        <div class="col-md-3">
+        <div class="col-md-3 col-12">
           <div class="card wow bounceInUp lectures" data-wow-delay="0.2s">
             <h4 class="ru">Лекции</h4>
             <h4 class="ua">Лекції</h4>
@@ -83,7 +81,7 @@ $file = basename($path, ".pdf"); // $file содержит "tezisy3"
             <br>
           </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 col-12">
           <div class="card wow bounceInUp labs" data-wow-delay="0.4s">
             <h4 class="ru">Лабы</h4>
             <h4 class="ua">Лаби</h4>
@@ -91,7 +89,7 @@ $file = basename($path, ".pdf"); // $file содержит "tezisy3"
             <br>
           </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 col-12">
           <div class="card wow bounceInUp typical_tasks" data-wow-delay="0.6s">
             <h4 class="ru">Типичные задачи</h4>
             <h4 class="ua">Типові завдання</h4>
@@ -99,7 +97,7 @@ $file = basename($path, ".pdf"); // $file содержит "tezisy3"
             <br>
           </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 col-12">
           <div class="card wow bounceInUp assessment" data-wow-delay="0.8s">
           <h4 class="ru">Оценки</h4>
           <h4 class="ua">Оцінки</h4>
@@ -117,49 +115,11 @@ $file = basename($path, ".pdf"); // $file содержит "tezisy3"
 
       <!-- вкладка лекции  -->
       <div class="row text-left lectures-doc">
-        <?php
-           // загрузка новых файлов  
-           // запись всех файлов с папки в массив 
-          $featured_dir = 'docs_ru/lectures_ru/doc/';
-          $scan = scandir($featured_dir);
 
-      echo '<form action="index.php" name="upload_lectures-doc" method="post" enctype="multipart/form-data" id="form1">
-                <ol>';
-                 $a = -2;
-                 for ($i=0; $i<count($scan); $i++) {
-                  if ($scan[$i] != '.' && $scan[$i] != '..') {
-                       echo '<li id = "' .$a. '"><a href= "'. $featured_dir . $scan[$i] . '"><p id="lecture_1">'. $scan[$i] . '</p></a>
-                             <a href="'. $featured_dir . $scan[$i] . '" download><img src="img/save.png" alt="Скачать" class="save-png"></a>
-                             <a href="#" onclick="deleteFile(&quot;docs_ru/lectures_ru/doc/'.$scan[$i].'&quot;); return false;"><img src="img/update.png" alt="Удалить" class="update-png"></a></li>';
-                    } 
-                    $a++;
-                } echo '</ol>';
-                  echo '<input type="file" accept=".doc, .docx, .pdf, .dwg" name="im" id="flb1" class="input_change plus_block">
-              <p><input type="submit" onclick="runFileCheck(1,\'lectures_ru\'); return false;" name="upload_lectures-doc" value="Загрузить" class="plus_block" id="input_load"></p>
-       </form>';
-        ?>
       </div>
 
       <div class="row text-left lectures-pdf">
-        <?php
-// <input type="file" accept=".xls,.xlsx" />  $file = basename($path); // $file содержит "tezisy3.pdf" $file = basename($path, ".pdf"); // $file содержит "tezisy3"
-          $featured_dir = 'docs_ru/lectures_ru/pdf/';
-          $scan = scandir($featured_dir);
-      echo '<form action="index.php" name="upload_lectures-pdf" method="post" enctype="multipart/form-data"  id="form2">
-                <ol>';
-                 $a = -2;
-                 for ($i=0; $i<count($scan); $i++) {
-                  if ($scan[$i] != '.' && $scan[$i] != '..') {              
-                       echo '<li id = "' .$a. '"><a href= "'. $featured_dir . $scan[$i] . '"><p id="lecture_1">'. $scan[$i] . '</p></a>
-                             <a href="'. $featured_dir . $scan[$i] . '" target="_blank"><img src="img/save.png" alt="Скачать" class="save-png"></a>
-                             <a href="#" onclick="deleteFile(&quot;docs_ru/lectures_ru/pdf/'.$scan[$i].'&quot;); return false;"><img src="img/update.png" alt="Удалить" class="update-png"></a></li>';
-                    } 
-                    $a++;
-                } echo '</ol>';
-                  echo '<input type="file" name="im" accept=".doc, .docx, .pdf, .dwg" id="flb2" class="input_change plus_block">
-              <p><input type="submit" name="upload_lectures-pdf" value="Загрузить" class="plus_block" id="input_load" onclick="runFileCheck(2,\'lectures_ru\');return false;"></p>
-       </form>';
-        ?>
+
       </div>
 
       </div>
@@ -170,49 +130,11 @@ $file = basename($path, ".pdf"); // $file содержит "tezisy3"
 
       <!-- вкладка лекции  -->
       <div class="row text-left labs-doc">
-        <?php
-           // загрузка новых файлов  
-           // запись всех файлов с папки в массив 
-          $featured_dir = 'docs_ru/labs_ru/doc/';
-          $scan = scandir($featured_dir);
 
-      echo '<form action="index.php" name="upload" method="post" enctype="multipart/form-data"  id="form3">
-                <ol>';
-                 $a = -2;
-                 for ($i=0; $i<count($scan); $i++) {
-                  if ($scan[$i] != '.' && $scan[$i] != '..') {
-                           echo '<li id = "' .$a. '"><a href= "'. $featured_dir . $scan[$i] . '"><p id="labs_1">'. $scan[$i] . '</p></a>
-                             <a href="'. $featured_dir . $scan[$i] . '" download><img src="img/save.png" alt="Скачать" class="save-png"></a>
-                             <a href="#" onclick="deleteFile(&quot;docs_ru/labs_ru/doc/'.$scan[$i].'&quot;); return false;"><img src="img/update.png" alt="Удалить" class="update-png"></a></li>';
-                    } 
-                    $a++;
-                } echo '</ol>';
-                  echo '<input type="file" accept=".doc, .docx, .pdf" name="im" id="flb3" class="input_change plus_block">
-              <p><input type="submit" name="upload" value="Загрузить" onclick="runFileCheck(3,\'labs_ru\');return false;" class="plus_block" id="input_load"></p>
-       </form>';
-        ?>
       </div>
 
       <div class="row text-left labs-pdf">
-        <?php
 
-          $featured_dir = 'docs_ru/labs_ru/pdf/';
-          $scan = scandir($featured_dir);
-      echo '<form action="index.php" name="upload" method="post" enctype="multipart/form-data" id="form4">
-                <ol>';
-                 $a = -2;
-                 for ($i=0; $i<count($scan); $i++) {
-                  if ($scan[$i] != '.' && $scan[$i] != '..') {
-                       echo '<li id = "' .$a. '"><a href= "'. $featured_dir . $scan[$i] . '"><p id="labs_1">'. $scan[$i] . '</p></a>
-                             <a href="'. $featured_dir . $scan[$i] . '" target="_blank"><img src="img/save.png" alt="Скачать" class="save-png"></a>
-                             <a href="#" onclick="deleteFile(&quot;docs_ru/labs_ru/pdf/'.$scan[$i].'&quot;); return false;"><img src="img/update.png" alt="Удалить" class="update-png"></a></li>';
-                    } 
-                    $a++;
-                } echo '</ol>';
-                  echo '<input type="file" accept=".doc, .docx, .pdf" name="im" id="flb4" class="input_change plus_block">
-              <p><input type="submit" name="upload" value="Загрузить" onclick="runFileCheck(4,\'labs_ru\');return false;" class="plus_block" id="input_load"></p>
-       </form>';
-        ?>
       </div>
 
       </div>
@@ -223,49 +145,11 @@ $file = basename($path, ".pdf"); // $file содержит "tezisy3"
 
       <!-- вкладка лекции  -->
       <div class="row text-left typical_tasks-doc">
-        <?php
-           // загрузка новых файлов  
-           // запись всех файлов с папки в массив 
-          $featured_dir = 'docs_ru/typical_tasks_ru/doc/';
-          $scan = scandir($featured_dir);
 
-      echo '<form action="index.php" name="upload" method="post" enctype="multipart/form-data" id="form5">
-                <ol>';
-                 $a = -2;
-                 for ($i=0; $i<count($scan); $i++) {
-                  if ($scan[$i] != '.' && $scan[$i] != '..') {
-                       echo '<li id = "' .$a. '"><a href= "'. $featured_dir . $scan[$i] . '"><p id="typical_tasks_1">'. $scan[$i] . '</p></a>
-                             <a href="'. $featured_dir . $scan[$i] . '" download><img src="img/save.png" alt="Скачать" class="save-png"></a>
-                             <a href="#" onclick="deleteFile(&quot;docs_ru/typical_tasks_ru/doc/'.$scan[$i].'&quot;); return false;"><img src="img/update.png" alt="Удалить" class="update-png"></a></li>';
-                    } 
-                    $a++;
-                } echo '</ol>';
-                  echo '<input type="file" accept=".doc, .docx, .pdf" name="im" id="flb5" class="input_change plus_block">
-              <p><input type="submit" name="upload" value="Загрузить" onclick="runFileCheck(5, \'typical_tasks_ru\');return false;" class="plus_block" id="input_load"></p>
-       </form>';
-        ?>
       </div>
 
       <div class="row text-left typical_tasks-pdf">
-        <?php
 
-          $featured_dir = 'docs_ru/typical_tasks_ru/pdf/';
-          $scan = scandir($featured_dir);
-      echo '<form action="index.php" name="upload" method="post" enctype="multipart/form-data" id="form6">
-                <ol>';
-                 $a = -2;
-                 for ($i=0; $i<count($scan); $i++) {
-                  if ($scan[$i] != '.' && $scan[$i] != '..') {
-                       echo '<li id = "' .$a. '"><a href= "'. $featured_dir . $scan[$i] . '"><p id="typical_tasks_1">'. $scan[$i] . '</p></a>
-                             <a href="'. $featured_dir . $scan[$i] . '" target="_blank"><img src="img/save.png" alt="Скачать" class="save-png"></a>
-                             <a href="#" onclick="deleteFile(&quot;docs_ru/typical_tasks_ru/pdf/'.$scan[$i].'&quot;); return false;"><img src="img/update.png" alt="Удалить" class="update-png"></a></li>';
-                    } 
-                    $a++;
-                } echo '</ol>';
-                  echo '<input type="file" accept=".doc, .docx, .pdf" name="im" id="flb6" class="input_change plus_block">
-              <p><input type="submit" name="upload" value="Загрузить" onclick="runFileCheck(6, \'typical_tasks_ru\');return false;" class="plus_block" id="input_load"></p>
-       </form>';
-        ?>
       </div>
     
       </div>
@@ -274,47 +158,11 @@ $file = basename($path, ".pdf"); // $file содержит "tezisy3"
        <div id="asses">  <!-- блок данных по оценкам  -->
       <div class="container">
       <div class="row text-left assessment-xls">
-        <?php
-
-          $featured_dir = 'docs_ru/assessment_ru/xls/';
-          $scan = scandir($featured_dir);
-      echo '<form action="index.php" name="upload" method="post" enctype="multipart/form-data" id="form7">
-                <ol>';
-                 $a = -2;
-                 for ($i=0; $i<count($scan); $i++) {
-                  if ($scan[$i] != '.' && $scan[$i] != '..') {
-                       echo '<li id = "' .$a. '"><a href= "'. $featured_dir . $scan[$i] . '"><p id="assessment_1">'. $scan[$i] . '</p></a>
-                             <a href="'. $featured_dir . $scan[$i] . '" download><img src="img/save.png" alt="Скачать" class="save-png"></a>
-                             <a href="#" onclick="deleteFile(&quot;docs_ru/assessment_ru/xls/'.$scan[$i].'&quot;); return false;"><img src="img/update.png" alt="Удалить" class="update-png"></a></li>';
-                    } 
-                    $a++;
-                } echo '</ol>';
-                  echo '<input type="file" accept=".doc, .docx, .pdf, .xls, .xlsx" name="im" id="flb7" class="input_change plus_block">
-              <p><input type="submit" name="upload" value="Загрузить" onclick="runFileCheck(7, \'assessment_ru\');return false;" class="plus_block" id="input_load"></p>
-       </form>';
-        ?>
+        
       </div>
 
        <div class="row text-left  assessment-pdf">
-        <?php
-
-          $featured_dir = 'docs_ru/assessment_ru/pdf/';
-          $scan = scandir($featured_dir);
-      echo '<form action="index.php" name="upload" method="post" enctype="multipart/form-data" id="form8">
-                <ol>';
-                 $a = -2;
-                 for ($i=0; $i<count($scan); $i++) {
-                  if ($scan[$i] != '.' && $scan[$i] != '..') {
-                       echo '<li id = "' .$a. '"><a href= "'. $featured_dir . $scan[$i] . '"><p id="assessment_1">'. $scan[$i] . '</p></a>
-                             <a href="'. $featured_dir . $scan[$i] . '" target="_blank"><img src="img/save.png" alt="Скачать" class="save-png"></a>
-                             <a href="#" onclick="deleteFile(&quot;docs_ru/assessment_ru/pdf/'.$scan[$i].'&quot;); return false;"><img src="img/update.png" alt="Удалить" class="update-png"></a></li>';
-                    } 
-                    $a++;
-                } echo '</ol>';
-                  echo '<input type="file" accept=".doc, .docx, .pdf" name="im" id="flb8" class="input_change plus_block">
-              <p><input type="submit" name="upload" value="Загрузить" onclick="runFileCheck(8, \'assessment_ru\');return false;" class="plus_block" id="input_load"></p>
-       </form>';
-        ?>
+       
       </div>
 
       
@@ -356,48 +204,11 @@ $file = basename($path, ".pdf"); // $file содержит "tezisy3"
 
       <!-- вкладка лекции  -->
       <div class="row text-left lectures-doc">
-        <?php
-           // загрузка новых файлов  
-           // запись всех файлов с папки в массив 
-          $featured_dir = 'docs_ru/lectures_ua/doc/';
-          $scan = scandir($featured_dir);
 
-      echo '<form action="index.php" name="upload_lectures-doc" method="post" enctype="multipart/form-data" id="form1">
-                <ol>';
-                 $a = -2;
-                 for ($i=0; $i<count($scan); $i++) {
-                  if ($scan[$i] != '.' && $scan[$i] != '..') {
-                       echo '<li id = "' .$a. '"><a href= "'. $featured_dir . $scan[$i] . '"><p id="lecture_1">'. $scan[$i] . '</p></a>
-                             <a href="'. $featured_dir . $scan[$i] . '" download><img src="img/save.png" alt="Скачать" class="save-png"></a>
-                             <a href="#" onclick="deleteFile(&quot;docs_ru/lectures_ua/doc/'.$scan[$i].'&quot;); return false;"><img src="img/update.png" alt="Удалить" class="update-png"></a></li>';
-                    } 
-                    $a++;
-                } echo '</ol>';
-                  echo '<input type="file" accept=".doc, .docx, .pdf, .dwg" name="im" id="flb1" class="input_change plus_block">
-              <p><input type="submit" onclick="runFileCheck(1,\'lectures_ua\'); return false;" name="upload_lectures-doc" value="Загрузить" class="plus_block" id="input_load"></p>
-       </form>';
-        ?>
       </div>
 
       <div class="row text-left lectures-pdf">
-        <?php
-          $featured_dir = 'docs_ru/lectures_ua/pdf/';
-          $scan = scandir($featured_dir);
-      echo '<form action="index.php" name="upload_lectures-pdf" method="post" enctype="multipart/form-data"  id="form2">
-                <ol>';
-                 $a = -2;
-                 for ($i=0; $i<count($scan); $i++) {
-                  if ($scan[$i] != '.' && $scan[$i] != '..') {              
-                       echo '<li id = "' .$a. '"><a href= "'. $featured_dir . $scan[$i] . '"><p id="lecture_1">'. $scan[$i] . '</p></a>
-                             <a href="'. $featured_dir . $scan[$i] . '" target="_blank"><img src="img/save.png" alt="Скачать" class="save-png"></a>
-                             <a href="#" onclick="deleteFile(&quot;docs_ru/lectures_ua/pdf/'.$scan[$i].'&quot;); return false;"><img src="img/update.png" alt="Удалить" class="update-png"></a></li>';
-                    } 
-                    $a++;
-                } echo '</ol>';
-                  echo '<input type="file" name="im" accept=".doc, .docx, .pdf, .dwg" id="flb2" class="input_change plus_block">
-              <p><input type="submit" name="upload_lectures-pdf" value="Загрузить" class="plus_block" id="input_load" onclick="runFileCheck(2,\'lectures_ua\');return false;"></p>
-       </form>';
-        ?>
+       
       </div>
 
       </div>
@@ -408,49 +219,11 @@ $file = basename($path, ".pdf"); // $file содержит "tezisy3"
 
       <!-- вкладка лекции  -->
       <div class="row text-left labs-doc">
-        <?php
-           // загрузка новых файлов  
-           // запись всех файлов с папки в массив 
-          $featured_dir = 'docs_ru/labs_ua/doc/';
-          $scan = scandir($featured_dir);
 
-      echo '<form action="index.php" name="upload" method="post" enctype="multipart/form-data"  id="form3">
-                <ol>';
-                 $a = -2;
-                 for ($i=0; $i<count($scan); $i++) {
-                  if ($scan[$i] != '.' && $scan[$i] != '..') {
-                           echo '<li id = "' .$a. '"><a href= "'. $featured_dir . $scan[$i] . '"><p id="labs_1">'. $scan[$i] . '</p></a>
-                             <a href="'. $featured_dir . $scan[$i] . '" download><img src="img/save.png" alt="Скачать" class="save-png"></a>
-                             <a href="#" onclick="deleteFile(&quot;docs_ru/labs_ua/doc/'.$scan[$i].'&quot;); return false;"><img src="img/update.png" alt="Удалить" class="update-png"></a></li>';
-                    } 
-                    $a++;
-                } echo '</ol>';
-                  echo '<input type="file" accept=".doc, .docx, .pdf" name="im" id="flb3" class="input_change plus_block">
-              <p><input type="submit" name="upload" value="Загрузить" onclick="runFileCheck(3,\'labs_ua\');return false;" class="plus_block" id="input_load"></p>
-       </form>';
-        ?>
       </div>
 
       <div class="row text-left labs-pdf">
-        <?php
-
-          $featured_dir = 'docs_ru/labs_ua/pdf/';
-          $scan = scandir($featured_dir);
-      echo '<form action="index.php" name="upload" method="post" enctype="multipart/form-data" id="form4">
-                <ol>';
-                 $a = -2;
-                 for ($i=0; $i<count($scan); $i++) {
-                  if ($scan[$i] != '.' && $scan[$i] != '..') {
-                       echo '<li id = "' .$a. '"><a href= "'. $featured_dir . $scan[$i] . '"><p id="labs_1">'. $scan[$i] . '</p></a>
-                             <a href="'. $featured_dir . $scan[$i] . '" target="_blank"><img src="img/save.png" alt="Скачать" class="save-png"></a>
-                             <a href="#" onclick="deleteFile(&quot;docs_ru/labs_ua/pdf/'.$scan[$i].'&quot;); return false;"><img src="img/update.png" alt="Удалить" class="update-png"></a></li>';
-                    } 
-                    $a++;
-                } echo '</ol>';
-                  echo '<input type="file" accept=".doc, .docx, .pdf" name="im" id="flb4" class="input_change plus_block">
-              <p><input type="submit" name="upload" value="Загрузить" onclick="runFileCheck(4,\'labs_ua\');return false;" class="plus_block" id="input_load"></p>
-       </form>';
-        ?>
+        
       </div>
 
       </div>
@@ -484,16 +257,16 @@ $file = basename($path, ".pdf"); // $file содержит "tezisy3"
     </section>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --><!-- Подклчена библиотека jquery -->
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<!--     <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script> <!-- Подключен стандартный файл bootstrap -->
+<!--     <script src="js/bootstrap.min.js"></script> --> <!-- Подключен стандартный файл bootstrap -->
     <script src="js/jquery.nicescroll.min.js"></script>
     <script src="js/wow.min.js"></script>   <!-- Подклчена библиотека для анимации -->
     <!-- Инициируем за рание файл wow.min.js -->
     <script>
        new WOW().init(); 
     </script>
-   <script type="text/javascript">
+<!--    <script type="text/javascript"> -->
    	<?php 
    	if(isset($_GET['li'])){
    		print("$('#content_1').fadeOut(\"fast\");
@@ -503,7 +276,7 @@ $file = basename($path, ".pdf"); // $file содержит "tezisy3"
 			        $('#password').val('');");
    	}
    	 ?>
-   </script>
+<!--    </script> -->
 <!-- Инициализация документ jquery.nicescroll-->
     <script>
        $(document).ready(
