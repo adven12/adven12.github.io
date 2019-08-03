@@ -1,6 +1,11 @@
 
 /*========================== БАЗОВЫИ НАСТРОЙКИ =====================*/
-// hover hover visited и active - псевдо классы 
+html, body{
+	font-size: 14px;
+}
+*{
+	box-sizing: border-box;	 
+}
 a:hover,
 a:focus,
 a:visited,
@@ -11,10 +16,10 @@ a:active{
 	text-transform: uppercase;
 	color: #666666;
 }
-// что бы не было тупой сине обводочки 
 button:focus{
 outline: none;
 }
+
 /*========================== ШАПКА =====================*/
 header{
 	color: #666666;
@@ -25,10 +30,12 @@ header{
 	.logotype{
         img{
         	text-align: left;
-            //display: inline-block; //не знаю зачем 
             width: 150px;
         	height: 40px;         	
-        	margin-top: 15px;
+        	margin-top: 7px;
+        	max-width: 100%;
+            display: block;
+	        height: auto;
         }
 	}
 
@@ -36,16 +43,23 @@ header{
 		h4{
 			text-transform: uppercase;
 			h5{
-				font-size: 15px;
+				font-size: 1.071rem;
 			}
 		}
 	}
 
 	.phone_number{
 		text-align: right;
+		max-width: 100%;
+        display: block;
+	    height: auto;
 		h3{
 			margin-top: 7px;
+			font-size: 1.714rem;
 		} 
+		p{
+           font-size: 1rem;
+		}
         a{
         color: #666666;
 		   
@@ -75,7 +89,7 @@ background-color: #FAFDFA; // фон в цвет
 ul.list-inline a{
 	display: inline-block; // все в линию
 	text-transform: uppercase; // с большой буквы все 
-	padding: 20px 10px; // отступы с верху , по бока
+	padding: 1.429rem 0.714rem; // отступы с верху , по бока
 	color: #666666;
 				        -moz-transition: all 0.1s 0.02s ease;
 					      -o-transition: all 0.1s 0.02s ease;
@@ -95,6 +109,9 @@ ul.list-inline{
    z-index: 100;
    width: 100%;
    height: 60px;
+   li{
+   	font-size: 1rem;
+   }
 }
 
 /*==========================    ГЛАВНЫЙ ЭКРАН    ==============================*/
